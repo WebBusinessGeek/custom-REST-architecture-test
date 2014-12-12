@@ -9,9 +9,15 @@
 namespace App\Polymorphic;
 
 
+use App\UserDirectory\User;
+use App\UserDirectory\UserInternalService;
+
 class TraitConcrete {
 
     use AuthorizationTrait, AuthorizationTrait, FactoryTrait,
         InvokerTrait, RepositoryTrait, ResponderTrait, ValidatorTrait;
+
+
+
 
 }
