@@ -32,6 +32,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	protected $hidden = ['password', 'remember_token'];
 
 
+
+
+
+
+
+
+
+
+	//NEED TO REFACTOR THESE INTO  THEIR OWN CLASS FOR EASY EXTENSION
+
 	/**
 	 * Stores the models accepted attributes
 	 * @var array
@@ -43,6 +53,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			'password'
 		];
 
+	/**
+	 * Stores the models non nullable attributes
+	 * @var array
+     */
+	protected $nonNullableAttributes =
+		[
+			'email',
+
+			'password'
+
+		];
 
 	/**
 	 * Returns the models accepted attributes
@@ -51,6 +72,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function getAcceptedAttributes()
 	{
 		return $this->acceptedAttributes;
+	}
+
+	/**
+	 * Returns the models Non nullable attributes
+	 * @return array
+     */
+	public function getNonNullableAttributes()
+	{
+		return $this->nonNullableAttributes;
 	}
 
 }

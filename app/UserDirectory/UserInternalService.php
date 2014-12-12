@@ -25,8 +25,8 @@ class UserInternalService extends InternalService {
         //take associative array
 
         //checks before placing values
-            //must check if model accepts the keys
-            //must check that all necessary values were sent
+            //must check if model accepts the keys - DONE
+            //must check that all unNullable values were sent
             //must check if they are in a valid format
             //also check if the values are unique
             //check if owner exists
@@ -41,7 +41,7 @@ class UserInternalService extends InternalService {
 
     public function show()
     {
-
+        
     }
 
     public function update()
