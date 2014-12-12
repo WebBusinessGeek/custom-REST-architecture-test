@@ -11,4 +11,10 @@ namespace App\Polymorphic;
 
 trait ValidatorTrait {
 
+
+    public function modelAcceptsProperties()
+    {
+        
+    }
+
 }

@@ -19,6 +19,8 @@ abstract class InternalService {
 
     use ValidatorTrait, ResponderTrait, FactoryTrait, RepositoryTrait, InvokerTrait;
 
+    public $model;
+
     abstract public function index();
 
     abstract public function store();

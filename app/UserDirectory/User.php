@@ -31,4 +31,26 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+
+	/**
+	 * Stores the models accepted attributes
+	 * @var array
+     */
+	protected $acceptedAttributes =
+		[
+			'email',
+
+			'password'
+		];
+
+
+	/**
+	 * Returns the models accepted attributes
+	 * @return array
+     */
+	public function getAcceptedAttributes()
+	{
+		return $this->acceptedAttributes;
+	}
+
 }

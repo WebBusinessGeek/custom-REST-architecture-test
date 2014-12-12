@@ -18,6 +18,8 @@ abstract class ExternalService {
 
     use ResponderTrait, AuthenticationTrait, AuthorizationTrait;
 
+    public $model;
+
     abstract public function index();
 
     abstract public function store();
