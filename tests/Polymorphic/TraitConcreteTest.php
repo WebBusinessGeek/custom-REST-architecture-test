@@ -13,20 +13,56 @@ use \App\UserDirectory\User;
 class TraitConcreteTest extends \TestCase {
 
     /**
-     * Test if method returns true if passed in array keys are in model accepted attribute list, otherwise false.
+     * Test if method returns true if passed in array keys are accepted model attributes, otherwise false.
      */
-    public function test_validatorTrait_modelAcceptsAttributes_method()
+    public function test_validatorTrait_modelAcceptsAttributes2_method()
     {
         //traitConcrete instance
         $trait = new TraitConcrete();
 
         //array to match
         $arrayToMatch = [
-            'email',
+            0 => [
+                'name' => 'email',
 
-            'password',
+                'format' => 'email',
 
-            'name'
+                'nullable' => false,
+
+                'unique' => true,
+
+                'enumValues' => [
+
+                ]
+            ],
+
+            1 => [
+                'name' => 'password',
+
+                'format' => 'email',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'enumValues' => [
+
+                ]
+            ],
+
+            2 => [
+                'name' => 'name',
+
+                'format' => 'email',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'enumValues' => [
+
+                ]
+            ],
         ];
 
         //good arrays to test
@@ -80,9 +116,8 @@ class TraitConcreteTest extends \TestCase {
 
 
     /**
-     *Test if method returns true if all values in arrayToCheck
-     * are set where keys from arrayToCheck match values from modelNonNullableAttributes array.
-     * Otherwise false.
+     *Test method returns true if  mandatory values are set on arrayToCheck, otherwise false.
+     *
      */
     public function test_validatorTrait_modelNonNullableAttributesSet_method()
     {
@@ -91,11 +126,46 @@ class TraitConcreteTest extends \TestCase {
 
         //array to match
         $arrayToMatch = [
-            'needValue1',
+           0 => [
+            'name' => 'needValue1',
 
-            'needValue2',
+			'format' => 'email',
 
-            'needValue3'
+			'nullable' => false,
+
+			'unique' => true,
+
+			'enumValues' => [
+
+            ]
+		],
+            1 => [
+                'name' => 'needValue2',
+
+                'format' => 'key',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'enumValues' => [
+
+                ]
+            ],
+
+            2 => [
+                'name' => 'dontNeedValue',
+
+                'format' => 'string',
+
+                'nullable' => true,
+
+                'unique' => true,
+
+                'enumValues' => [
+
+                ]
+            ],
         ];
         //good arrays to test
         $good1 = [
@@ -103,17 +173,17 @@ class TraitConcreteTest extends \TestCase {
 
             'needValue2' => 'value',
 
-            'needValue3' => 'value'
+            'dontNeedValue' => null,
         ];
 
         $good2 = [
-            'needValue2' => 'value',
-
             'needValue1' => 'value',
 
-            'needValue3' => 'value',
+            'needValue2' => 'value',
 
-            'needValue4' => null,
+            'dontNeedValue' => null,
+
+            'extraValue' => 'value'
         ];
 
         //bad arrays to test
@@ -122,17 +192,15 @@ class TraitConcreteTest extends \TestCase {
 
             'needValue2' => 'value',
 
-            'needValue3' => 'value'
+            'dontNeedValue' => 'value'
         ];
 
         $bad2 = [
-            'needValue1' => null,
+            'needValue1' => 'value',
 
-            'needValue2' => 'value',
+            'needValue2' => null,
 
-            'needValue3' => 'value',
-
-            'needValue4' => 'value'
+            'dontNeedValue' => 'value'
         ];
 
         //call modelNonNullableAttributesSet method on good arrays and assert true
@@ -142,6 +210,23 @@ class TraitConcreteTest extends \TestCase {
         //call modelNonNullableAttributesSet method on bad arrays and assert false
         $this->assertFalse($trait->modelNonNullableAttributesSet($bad1, $arrayToMatch));
         $this->assertFalse($trait->modelNonNullableAttributesSet($bad2, $arrayToMatch));
+
+    }
+
+    /**
+     *Test that method returns an array of attribute names associated with model.
+     */
+    public function test_invokerTrait_getModelAttributeNames_method()
+    {
+
+    }
+
+
+    /**
+     *Test method returns associative array of configuration values specified, otherwise throws an error.
+     */
+    public function test_invokerTrait_getModelAttributeConfiguration_method()
+    {
 
     }
 

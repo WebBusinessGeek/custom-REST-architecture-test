@@ -11,40 +11,51 @@ namespace App\Polymorphic;
 
 trait ValidatorTrait {
 
+    use InvokerTrait, RepositoryTrait;
 
     /**
-     * Returns true if arrayToCheck keys match the values in the model accepted attributes array, otherwise returns false.
+     * Returns true if array passed in contains keys the model will accept as attributes.
      * @param $arrayToCheck
-     * @param $modelAcceptedAttributes
+     * @param $modelAttributes
      * @return bool
      */
-    public function modelAcceptsAttributes($arrayToCheck, $modelAcceptedAttributes)
+    public function modelAcceptsAttributes($arrayToCheck, $modelAttributes)
     {
-        $responses = [];
+        $falseCounter = 0;
+
+        $attrArray = $this->getModelAttributeNames($modelAttributes);
+
         foreach($arrayToCheck as $key => $value)
         {
-            (in_array($key, $modelAcceptedAttributes)) ? : array_push($responses, false);
+            (in_array($key, $attrArray)) ? : $falseCounter++;
         }
-        return (in_array(false, $responses))? false : true;
 
+        return($falseCounter > 0) ? false : true;
     }
+
 
     /**
-     * Returns true if all non nullable values are set in arrayToCheck argument, otherwise false.
+     * Returns true if mandatory values are set in arrayToCheck, otherwise false.
      * @param $arrayToCheck
-     * @param $modelNonNullableAttributes
+     * @param $modelAttributes
      * @return bool
      */
-    public function modelNonNullableAttributesSet($arrayToCheck, $modelNonNullableAttributes)
+    public function modelNonNullableAttributesSet($arrayToCheck, $modelAttributes)
     {
-        $responses = [];
+        $falseCounter = 0;
+        $nullCheck =  $this->getModelAttributeConfiguration($modelAttributes, 'nullable');
 
-        for($i = 0; $i < count($modelNonNullableAttributes); $i++)
+        foreach($arrayToCheck as $key => $value)
         {
-            ($arrayToCheck[$modelNonNullableAttributes[$i]] != null) ? : array_push($responses, false);
+            if(isset($nullCheck[$key]) && $nullCheck[$key] == false)
+            {
+                ($value != null) ? : $falseCounter++;
+            }
         }
-
-        return (in_array(false, $responses))? false : true;
+        return ($falseCounter > 0) ? false : true;
     }
+
+
+
 
 }
