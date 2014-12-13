@@ -254,7 +254,16 @@ class TraitConcreteTest extends \TestCase {
         //assertFalse getModelAttributeConfiguration throws an exception when invalid config as used.
         $this->setExpectedException('InvalidArgumentException', 'Configuration values invalid');
         $trait->getModelAttributeConfiguration($user->getModelAttributes(), 'error');
-        
+
+    }
+
+
+    /**
+     *Test password meets requirements (min. length, min. integers, no invalid characters). Returns boolean.
+     */
+    public function test_validatorTrait_passwordIsValid_method()
+    {
+
     }
 
 }

@@ -33,7 +33,11 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+//		return view('welcome');
+
+		$trait = new TraitConcrete();
+
+		dd($trait->passwordIsValid('so', 'length', 'inte', 'char'));
 
 	}
 

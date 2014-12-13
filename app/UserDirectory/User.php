@@ -35,12 +35,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
 
-
-
-
-
-
 	//NEED TO REFACTOR THESE INTO  THEIR OWN CLASS FOR EASY EXTENSION
+
+	/**
+	 * Stores models minimum password length.
+	 * @var int
+     */
+	protected $minimumPasswordLength = 10;
 
 	/**
 	 * Stores models attributes and their configuration values
@@ -51,7 +52,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 //
 //			'name' => 'nameOfAttribute',
 //
-//			'format' => '(choose 1: email, url, key, string, enum)',
+//			'format' => '(choose 1: email, url, password, string, enum, text, id, token, ipAddress, date)',
 //
 //			'nullable' => false,
 //
@@ -82,7 +83,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		1 => [
 			'name' => 'password',
 
-			'format' => 'key',
+			'format' => 'password',
 
 			'nullable' => false,
 
@@ -108,23 +109,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->modelAttributes;
 	}
 
-
 	/**
-	 * Returns the models Non nullable attributes
-	 * @return array
-     */
-	public function getNonNullableAttributes()
+	 * Returns the models minimum password length.
+	 * @return int
+	 */
+	public function getMinimumPasswordLength()
 	{
-		return $this->nonNullableAttributes;
+		return $this->minimumPasswordLength;
 	}
-
-
-
-
-
-
-
-
 
 
 }

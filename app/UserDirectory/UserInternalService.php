@@ -27,9 +27,9 @@ class UserInternalService extends InternalService {
         //checks before placing values
             //must check if model accepts the keys - DONE
             //must check that all non Nullable values were sent - DONE
-            //must check if they are in a valid format -
-            //also check if the values are unique
-            //check if owner exists
+            //must check if they are in a valid format - WORKING!
+            //must check if all mandatory unique values are unique - notDone
+            //check if owner exists - notDone // should I do this???
 
         //if all good
             //place values on model by its keys
