@@ -218,7 +218,15 @@ class TraitConcreteTest extends \TestCase {
      */
     public function test_invokerTrait_getModelAttributeNames_method()
     {
+        //trait instance
+        $trait = new TraitConcrete();
 
+        //User model instance and assert it has $modelAttribute property set
+        $user = new User();
+        $this->assertTrue(is_array($user->getModelAttributes()));
+
+        //assert getModelAttributeNames returns an array
+        $this->assertTrue(is_array($trait->getModelAttributeNames($user->getModelAttributes())));
     }
 
 
@@ -227,7 +235,26 @@ class TraitConcreteTest extends \TestCase {
      */
     public function test_invokerTrait_getModelAttributeConfiguration_method()
     {
+        //trait instance
+        $trait = new TraitConcrete();
 
+        //User model instance and assert it has $modelAttribute property set
+        $user = new User();
+        $this->assertTrue(is_array($user->getModelAttributes()));
+
+        //assertTrue getModelAttributeConfiguration returns an array with all valid configs
+        $configs = [
+            'name', 'nullable', 'format', 'unique', 'enumValues'
+        ];
+        foreach($configs as $config)
+        {
+            $this->assertTrue(is_array($trait->getModelAttributeConfiguration($user->getModelAttributes(), $config)));
+        }
+
+        //assertFalse getModelAttributeConfiguration throws an exception when invalid config as used.
+        $this->setExpectedException('InvalidArgumentException', 'Configuration values invalid');
+        $trait->getModelAttributeConfiguration($user->getModelAttributes(), 'error');
+        
     }
 
 }
