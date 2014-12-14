@@ -18,27 +18,31 @@ class TraitConcrete {
          RepositoryTrait, ResponderTrait, ValidatorTrait;
 
 
+
     public function passwordIsValid($passwordToCheck, $minLength = null, $minInteger = null, $invalidCharacters = null)
     {
+        //ensure defaults are set
         $defaults = [
-            'minLength' => 0, 'minInteger' => 3, 'invalidCharacters' => '%^&*()-=_+{}[]\|?/><;'
+            'minLength' => 10,
+
+            'minInteger' => 3,
+
+            'invalidCharacters' => '%,^,&,*,(,),{,},[,],|,\,;,:,",\',<,>,\,,.,?,/,~,`',
         ];
 
-        if(!isset($minLength))
+        foreach($defaults as $key => $value)
         {
-            $minLength = $defaults['minLength'];
-        }
-        if(!isset($minInteger))
-        {
-            $minInteger = $defaults['minInteger'];
-        }
-        if(!isset($invalidCharacters))
-        {
-            $invalidCharacters = $defaults['invalidCharacters'];
+            if(!isset(${$key}))
+            {
+                ${$key} = $value ;
+            }
         }
 
-        echo 'length: ' . $minLength . '<br/>' . 'integer: '. $minInteger.'<br/>'. 'char: '.$invalidCharacters;
+        //check minimum length
 
+        //check minimum integers
+
+        //check for invalid characters
 
     }
 
