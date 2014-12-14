@@ -52,14 +52,27 @@ class TraitConcrete {
     }
 
 
+    /**
+     * Returns true is string to check equal to or greater than minimum length, otherwise false.
+     * @param $stringToCheck
+     * @param $minLength
+     * @return bool
+     */
     public function checkMinimumLengthMet($stringToCheck, $minLength)
     {
-        return (strlen($stringToCheck) >= $minLength) ? true : false;
+        return (strlen($stringToCheck) >= $minLength) ? : false;
     }
 
-    public function checkMinimumIntegersMet()
-    {
 
+    /**
+     * Returns true if string contains the minimum amount of integers, otherwise false. 
+     * @param $stringToCheck
+     * @param $minInteger
+     * @return bool
+     */
+    public function checkMinimumIntegersMet($stringToCheck, $minInteger)
+    {
+        return (preg_match_all("/[0-9]/", $stringToCheck) >= $minInteger) ? : false;
     }
 
     public function checkMinimumAlphaCharactersMet()

@@ -289,6 +289,24 @@ class TraitConcreteTest extends \TestCase {
      */
     public function test_validatorTrait_checkMinimumIntegersMet()
     {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //good strings to check
+        $good1 = '1234Integers';
+        $good2 = 'one1two2three3four4five5';
+
+        //bad strings to check
+        $bad1 = '123Integers';
+        $bad2 = 'noInteger';
+
+        //call checkMinimumIntegersMet and assert true on good strings
+        $this->assertTrue($trait->checkMinimumIntegersMet($good1, 4));
+        $this->assertTrue($trait->checkMinimumIntegersMet($good2, 4));
+
+        //call checkMinimumIntegersMet and assert false on bad strings
+        $this->assertFalse($trait->checkMinimumIntegersMet($bad1, 4));
+        $this->assertFalse($trait->checkMinimumIntegersMet($bad2, 4));
 
     }
 
