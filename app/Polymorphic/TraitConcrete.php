@@ -40,11 +40,38 @@ class TraitConcrete {
 
         //check minimum length
 
+
         //check minimum integers
+
+
+        //check minimum alpha characters met
+
 
         //check for invalid characters
 
     }
+
+
+    public function checkMinimumLengthMet($stringToCheck, $minLength)
+    {
+        return (strlen($stringToCheck) >= $minLength) ? true : false;
+    }
+
+    public function checkMinimumIntegersMet()
+    {
+
+    }
+
+    public function checkMinimumAlphaCharactersMet()
+    {
+
+    }
+
+    public function ensureNoInvalidCharactersUsed()
+    {
+
+    }
+
 
 
 }

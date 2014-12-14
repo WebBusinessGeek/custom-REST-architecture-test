@@ -259,6 +259,58 @@ class TraitConcreteTest extends \TestCase {
 
 
     /**
+     *Test method returns true if minimum length of characters is met, otherwise false.
+     */
+    public function test_validatorTrait_checkMinimumLengthMet()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //good strings to check
+        $good1 = 'lengthof10';
+        $good2 = 'lengthof9';
+
+        //bad strings to check
+        $bad1 = 'length7';
+        $bad2 = 'length';
+
+        //call checkMinimumLengthMet and assert true on good strings
+        $this->assertTrue($trait->checkMinimumLengthMet($good1, 9));
+        $this->assertTrue($trait->checkMinimumLengthMet($good2, 9));
+
+        //call checkMinimumLengthMet and assert false on bad strings
+        $this->assertFalse($trait->checkMinimumLengthMet($bad1, 9));
+        $this->assertFalse($trait->checkMinimumLengthMet($bad2, 9));
+    }
+
+
+    /**
+     *Test method returns true if minimum amount of integers used in string met, otherwise false.
+     */
+    public function test_validatorTrait_checkMinimumIntegersMet()
+    {
+
+    }
+
+    /**
+     *Test method returns true if minimum amount of alpha characters are met, otherwise false.
+     */
+    public function test_validatorTrait_checkMinimumAlphaCharactersMet()
+    {
+
+    }
+
+
+    /**
+     *Test method returns true if no invalid characters are set, otherwise false.
+     */
+    public function test_validatorTrait_ensureNoInvalidCharactersUsed()
+    {
+
+    }
+
+
+    /**
      *Test password meets requirements (min. length, min. integers, no invalid characters). Returns boolean.
      */
     public function test_validatorTrait_passwordIsValid_method()

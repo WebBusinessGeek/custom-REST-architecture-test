@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="89654f89-71df-4433-8b85-4d76f96543b5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php" afterPath="$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php" afterPath="$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="restArchitectureTest.iws" />
@@ -28,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TraitConcrete.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php">
+      <file leaf-file-name="TraitConcreteTest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8920863" vertical-offset="330" max-vertical-offset="1225">
-              <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.78417265" vertical-offset="6380" max-vertical-offset="8025">
+              <caret line="283" column="5" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -291,20 +291,50 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="1225">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="400" max-vertical-offset="1225">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding>
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="805" max-vertical-offset="1700">
           <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-          <folding>
-            <marker date="1418584707000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder=" Create a new controller instance. ..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder=" Show the application welcome screen to the user. ..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="//..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -312,7 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5855" max-vertical-offset="6725">
           <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -320,7 +349,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1125">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -328,7 +369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5905" max-vertical-offset="6725">
           <caret line="255" column="50" selection-start-line="255" selection-start-column="50" selection-end-line="255" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -344,7 +384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4955" max-vertical-offset="5825">
           <caret line="188" column="28" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -360,7 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2305" max-vertical-offset="3725">
           <caret line="132" column="18" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -368,7 +406,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="700">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="23" selection-end-column="61" />
-          <folding />
+          <folding>
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -467,7 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60431653" vertical-offset="205" max-vertical-offset="1475">
           <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -494,28 +543,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5683453" vertical-offset="5855" max-vertical-offset="6725">
-          <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38848922" vertical-offset="605" max-vertical-offset="1300">
           <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
-          <folding>
-            <marker date="1418584707000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder=" Create a new controller instance. ..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder=" Show the application welcome screen to the user. ..." />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418584707000" expanded="true" signature="-1:-1" placeholder="//..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -523,32 +554,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34532374" vertical-offset="160" max-vertical-offset="2475">
           <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
-          <folding>
-            <marker date="1402642084000" expanded="false" signature="-1:-1" placeholder=" PHPUnit ..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder=" Constraint that asserts that the Traversable it is applied to contains ..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder=" @var PHPUnit_Framework_Constraint ..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder=" @var string ..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder=" @param string  $type ..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder=" Evaluates the constraint for parameter $other ..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder=" Returns a string representation of the constraint. ..." />
-            <marker date="1402642084000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8920863" vertical-offset="330" max-vertical-offset="1225">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.4964029" vertical-offset="905" max-vertical-offset="1900">
+          <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
+          <folding>
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418593738000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418593738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78417265" vertical-offset="6380" max-vertical-offset="8025">
+          <caret line="283" column="5" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
           <folding />
         </state>
       </provider>
