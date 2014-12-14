@@ -55,6 +55,92 @@ trait ValidatorTrait {
         return ($falseCounter > 0) ? false : true;
     }
 
+    /**
+     * Returns true if password is valid, false if password is not valid.
+     * @param $passwordToCheck
+     * @param null $minLength
+     * @param null $minInteger
+     * @param null $minLetter
+     * @param null $invalidCharacters
+     * @return bool
+     */
+    public function passwordIsValid($passwordToCheck, $minLength = null, $minInteger = null, $minLetter = null,  $invalidCharacters = null)
+    {
+        //ensure defaults are set
+        $defaults = [
+            'minLength' => 10,
+
+            'minInteger' => 3,
+
+            'minLetter' => 4,
+
+            'invalidCharacters' => "/[$%^&*()\-_+={}|\\[\]:;\"'<>?,.\/]/",
+        ];
+
+        foreach($defaults as $key => $value)
+        {
+            if(!isset(${$key}))
+            {
+                ${$key} = $value ;
+            }
+        }
+
+        return ($this->checkMinimumLengthMet($passwordToCheck, $minLength) &&
+            $this->checkMinimumIntegersMet($passwordToCheck, $minInteger) &&
+            $this->checkMinimumLettersMet($passwordToCheck, $minLetter) &&
+            $this->ensureNoInvalidCharactersUsed($passwordToCheck, $invalidCharacters));
+
+    }
+
+
+    /**
+     * Returns true is string to check equal to or greater than minimum length, otherwise false.
+     * @param $stringToCheck
+     * @param $minLength
+     * @return bool
+     */
+    public function checkMinimumLengthMet($stringToCheck, $minLength)
+    {
+        return (strlen($stringToCheck) >= $minLength) ? : false;
+    }
+
+
+    /**
+     * Returns true if string contains the minimum amount of integers, otherwise false.
+     * @param $stringToCheck
+     * @param $minInteger
+     * @return bool
+     */
+    public function checkMinimumIntegersMet($stringToCheck, $minInteger)
+    {
+        return (preg_match_all("/[0-9]/", $stringToCheck) >= $minInteger) ? : false;
+    }
+
+
+    /**
+     * Returns true if string contains the minimum amount of letters, otherwise false.
+     * @param $stringToCheck
+     * @param $minAlphaCharacters
+     * @return bool
+     */
+    public function checkMinimumLettersMet($stringToCheck, $minAlphaCharacters )
+    {
+
+        return (preg_match_all("/[A-Za-z]/", $stringToCheck) >= $minAlphaCharacters) ? :false;
+
+    }
+
+    /**
+     * Returns true if no invalid characters are found in the string, otherwise false.
+     * @param $stringToCheck
+     * @param $invalidCharacters
+     * @return bool
+     */
+    public function ensureNoInvalidCharactersUsed($stringToCheck, $invalidCharacters)
+    {
+        return (preg_match_all($invalidCharacters, $stringToCheck) > 0) ? false :true;
+    }
+
 
 
 

@@ -313,9 +313,26 @@ class TraitConcreteTest extends \TestCase {
     /**
      *Test method returns true if minimum amount of alpha characters are met, otherwise false.
      */
-    public function test_validatorTrait_checkMinimumAlphaCharactersMet()
+    public function test_validatorTrait_checkMinimumLettersMet()
     {
+        //trait instance
+        $trait = new TraitConcrete();
 
+        //good strings to check
+        $good1 = '1234abca';
+        $good2 = 'asdfjawoie1234';
+
+        //bad strings to check
+        $bad1 = 'a2343423891';
+        $bad2 = '90909334';
+
+        //call checkMinimumLettersMet and assert true on good strings
+        $this->assertTrue($trait->checkMinimumLettersMet($good1, 4));
+        $this->assertTrue($trait->checkMinimumLettersMet($good2, 4));
+
+        //call checkMinimumLettersMet and assert false on bad strings
+        $this->assertFalse($trait->checkMinimumLettersMet($bad1, 4));
+        $this->assertFalse($trait->checkMinimumLettersMet($bad2, 4));
     }
 
 
@@ -324,16 +341,54 @@ class TraitConcreteTest extends \TestCase {
      */
     public function test_validatorTrait_ensureNoInvalidCharactersUsed()
     {
+        //trait instance
+        $trait = new TraitConcrete();
 
+        //good strings to check
+        $good1 = '1234ab293840298sdfkjgseoica';
+        $good2 = 'asdf03940293gokdjfgokejrojawoie1234';
+
+        //bad strings to check
+        $bad1 = 'a2343423891{}';
+        $bad2 = '90909334$%^';
+
+        //invalid characters
+        $invalidChar = "/[$%^&*()\-_+={}|\\[\]:;\"'<>?,.\/]/";
+
+        //call ensureNoInvalidCharactersUsed() and assert true on good strings
+        $this->assertTrue($trait->ensureNoInvalidCharactersUsed($good1, $invalidChar));
+        $this->assertTrue($trait->ensureNoInvalidCharactersUsed($good2, $invalidChar));
+
+        //call ensureNoInvalidCharactersUsed() and assert false on bad strings
+        $this->assertFalse($trait->ensureNoInvalidCharactersUsed($bad1, $invalidChar));
+        $this->assertFalse($trait->ensureNoInvalidCharactersUsed($bad2, $invalidChar));
     }
 
 
     /**
-     *Test password meets requirements (min. length, min. integers, no invalid characters). Returns boolean.
+     *Test password meets requirements (min. length, min. integers, min. letters, no invalid characters). Returns boolean.
      */
     public function test_validatorTrait_passwordIsValid_method()
     {
+        //trait instance
+        $trait = new TraitConcrete();
 
+        //good passwords to check
+        $good1 = 'goodPassword1234';
+        $good2 = 'anotherGoodPassword12345';
+
+        //bad passwords to check
+        $bad1 = 'bad1231231231';
+        $bad2 = 'badder$#*$#*$&()}{';
+
+
+        //call passwordIsValid() and assert true on good strings
+        $this->assertTrue($trait->passwordIsValid($good1));
+        $this->assertTrue($trait->passwordIsValid($good2));
+
+        //call passwordIsValid() and assert false on bad strings
+        $this->assertFalse($trait->passwordIsValid($bad1));
+        $this->assertFalse($trait->passwordIsValid($bad2));
     }
 
 }

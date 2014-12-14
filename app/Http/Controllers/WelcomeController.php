@@ -34,10 +34,14 @@ class WelcomeController extends Controller {
 	public function index()
 	{
 		return view('welcome');
+
+//		$invalidChar = "/[$%^&*()\-_+={}|\\[\]:;\"'<>?,.\/]/";
 //
 //		$trait = new TraitConcrete();
 //
-//		dd($trait->passwordIsValid('so', null, null, 'this'));
+//		$str = 'asdlkfjkej34203984209309(0';
+//
+//		dd($trait->ensureNoInvalidCharactersUsed($str, $invalidChar));
 
 
 
