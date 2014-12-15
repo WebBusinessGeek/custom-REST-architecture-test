@@ -52,7 +52,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 //
 //			'name' => 'nameOfAttribute',
 //
-//			'format' => '(choose 1: email, url, password, string, enum, text, id, token, ipAddress, date)',
+//			'format' => '(choose 1: email, url, password,
+//							 string, exists, enum, text, id, token, ipAddress, date)',
 //
 //			'nullable' => false,
 //

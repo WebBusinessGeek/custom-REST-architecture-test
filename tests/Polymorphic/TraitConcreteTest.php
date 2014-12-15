@@ -391,4 +391,32 @@ class TraitConcreteTest extends \TestCase {
         $this->assertFalse($trait->passwordIsValid($bad2));
     }
 
+
+    /**
+     *Test method returns true is valid email format is used, otherwise false.
+     */
+    public function test_validatorTrait_emailIsValid_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //good emails to test
+        $good1 = 'someEmail@email.com';
+
+        $good2 = 'anotherGood1234@email.me';
+
+        //bad emails to test
+        $bad1 = 'bad@email';
+
+        $bad2 = 'reallyBad@.co';
+
+        //call emailIsValid method on good emails and assert true
+        $this->assertTrue($trait->emailIsValid($good1));
+        $this->assertTrue($trait->emailIsValid($good2));
+
+        //call emailIsValid method on bad emails and assert false
+        $this->assertFalse($trait->emailIsValid($bad1));
+        $this->assertFalse($trait->emailIsValid($bad2));
+    }
+
 }

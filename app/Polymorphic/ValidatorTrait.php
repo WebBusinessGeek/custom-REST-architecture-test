@@ -141,6 +141,15 @@ trait ValidatorTrait {
         return (preg_match_all($invalidCharacters, $stringToCheck) > 0) ? false :true;
     }
 
+    /**
+     * Returns true if email format is valid, otherwise false.
+     * @param $emailToCheck
+     * @return bool
+     */
+    public function emailIsValid($emailToCheck)
+    {
+        return (filter_var($emailToCheck, FILTER_VALIDATE_EMAIL))? true : false ;
+    }
 
 
 
