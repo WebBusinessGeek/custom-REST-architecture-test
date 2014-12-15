@@ -30,7 +30,7 @@ class UserInternalService extends InternalService {
             //must check if they are in a valid format - DONE
                 // password - done
                 // email - done
-            //must check if all mandatory unique values are unique - Working!
+            //must check if all mandatory unique values are unique - WORKING!
 
 
         //if all good

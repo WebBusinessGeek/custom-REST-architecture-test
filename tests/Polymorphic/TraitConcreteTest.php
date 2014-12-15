@@ -536,6 +536,35 @@ class TraitConcreteTest extends \TestCase {
      */
     public function test_validatorTrait_avoidDuplicationOfUniqueData_method()
     {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //save new user to database
+        $user = User::create([
+            'email' => 'validatorTrait@avoidDuplicationOfUniqueDataMethodTest.com',
+            'password' => 'testtest1234'
+        ]);
+
+        //good credentials
+        $good1 = [
+            'email' => 'validatorTrait@avoidDuplicationOfUniqueDataMethodTest.com',
+            'password' => 'testtest1234'
+        ];
+
+        //bad credentials
+        $bad1 = [
+            'email' => 'someOtherEmail3535353.com',
+            'password' => 'tjsldkjfk2349389203'
+        ];
+
+        //call avoidDuplicationOfUniqueData method using good credentials and assertFalse
+        $this->assertFalse($trait->avoidDuplicationOfUniqueData($good1, $user->getModelAttributes(),$user->getClassName()));
+
+        //delete the user from db
+        $user->delete();
+
+        //call avoidDuplicationOfUniqueData method on bad credentials and assert true.
+        $this->assertTrue($trait->avoidDuplicationOfUniqueData($bad1, $user->getModelAttributes(), $user->getClassName()));
 
     }
 

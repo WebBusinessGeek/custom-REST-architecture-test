@@ -186,6 +186,28 @@ trait ValidatorTrait {
         return ('\\'. get_class($instanceCheck) == $modelClassName)? false : true ;
     }
 
+    
+    /**
+     * Returns true if no duplicated data has been passed to a unique attribute, otherwise false.
+     * @param array $credentials
+     * @param array $modelAttributes
+     * @param $modelClassName
+     * @return bool
+     */
+    public function avoidDuplicationOfUniqueData($credentials = array(), $modelAttributes = array(), $modelClassName)
+    {
+        $falseCounter = 0;
+        $uniqueCheck = $this->getModelAttributeConfiguration($modelAttributes, 'unique');
+
+        foreach($credentials as $key => $value)
+        {
+            if($uniqueCheck[$key] == true)
+            {
+                ($this->dataIsUnique($value, $key, $modelClassName))? : $falseCounter++;
+            }
+        }
+        return ($falseCounter > 0) ? false: true;
+    }
 
 
 }

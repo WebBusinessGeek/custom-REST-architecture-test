@@ -17,20 +17,7 @@ class TraitConcrete {
     use AuthorizationTrait, AuthorizationTrait, FactoryTrait,
          RepositoryTrait, ResponderTrait, ValidatorTrait;
 
-    public function avoidDuplicationOfUniqueData($credentials = array(), $modelAttributes = array(), $modelClassName)
-    {
-        $falseCounter = 0;
-        $uniqueCheck = $this->getModelAttributeConfiguration($modelAttributes, 'unique');
 
-        foreach($credentials as $key => $value)
-        {
-            if($uniqueCheck[$key] == true)
-            {
-                ($this->dataIsUnique($value, $key, $modelClassName))? : $falseCounter++;
-            }
-        }
-        return ($falseCounter > 0) ? false: true;
-    }
 
 
 
