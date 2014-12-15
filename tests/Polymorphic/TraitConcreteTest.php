@@ -592,14 +592,14 @@ class TraitConcreteTest extends \TestCase {
     /**
      *Test method adds passed in attributes to specified model and returns the instance.
      */
-    public function test_validatorTrait_addAttributesToModel_method()
+    public function test_invokerTrait_addAttributesToModel_method()
     {
         //trait instance
         $trait = new TraitConcrete();
 
         //attributes
         $attr = [
-            'email' => 'validatorTrait@addAttributesToModelMethodTest.com',
+            'email' => 'invokerTrait@addAttributesToModelMethodTest.com',
             'password' => 'testtest12345'
         ];
 
@@ -609,7 +609,7 @@ class TraitConcreteTest extends \TestCase {
         $userToTest = $trait->addAttributesToModel($attr, $userForDynamicTesting->getClassName());
 
         //assert variable's attributes and class name
-        $this->assertEquals('validatorTrait@addAttributesToModelMethodTest.com', $userToTest->email);
+        $this->assertEquals('invokerTrait@addAttributesToModelMethodTest.com', $userToTest->email);
         $this->assertEquals('testtest12345', $userToTest->password);
         $this->assertEquals($userForDynamicTesting->getClassName(), '\\'.get_class($userToTest));
 
