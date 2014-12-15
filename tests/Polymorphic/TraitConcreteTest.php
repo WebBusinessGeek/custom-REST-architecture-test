@@ -223,10 +223,10 @@ class TraitConcreteTest extends \TestCase {
 
         //User model instance and assert it has $modelAttribute property set
         $user = new User();
-        $this->assertTrue(is_array($user->getModelAttributes()));
+        $this->assertTrue(is_array($user->getAttributes()));
 
         //assert getModelAttributeNames returns an array
-        $this->assertTrue(is_array($trait->getModelAttributeNames($user->getModelAttributes())));
+        $this->assertTrue(is_array($trait->getModelAttributeNames($user->getAttributes())));
     }
 
 
@@ -240,7 +240,7 @@ class TraitConcreteTest extends \TestCase {
 
         //User model instance and assert it has $modelAttribute property set
         $user = new User();
-        $this->assertTrue(is_array($user->getModelAttributes()));
+        $this->assertTrue(is_array($user->getAttributes()));
 
         //assertTrue getModelAttributeConfiguration returns an array with all valid configs
         $configs = [
@@ -248,12 +248,12 @@ class TraitConcreteTest extends \TestCase {
         ];
         foreach($configs as $config)
         {
-            $this->assertTrue(is_array($trait->getModelAttributeConfiguration($user->getModelAttributes(), $config)));
+            $this->assertTrue(is_array($trait->getModelAttributeConfiguration($user->getAttributes(), $config)));
         }
 
         //assertFalse getModelAttributeConfiguration throws an exception when invalid config as used.
         $this->setExpectedException('InvalidArgumentException', 'Configuration values invalid');
-        $trait->getModelAttributeConfiguration($user->getModelAttributes(), 'error');
+        $trait->getModelAttributeConfiguration($user->getAttributes(), 'error');
 
     }
 
@@ -558,13 +558,13 @@ class TraitConcreteTest extends \TestCase {
         ];
 
         //call avoidDuplicationOfUniqueData method using good credentials and assertFalse
-        $this->assertFalse($trait->avoidDuplicationOfUniqueData($good1, $user->getModelAttributes(),$user->getClassName()));
+        $this->assertFalse($trait->avoidDuplicationOfUniqueData($good1, $user->getAttributes(),$user->getClassName()));
 
         //delete the user from db
         $user->delete();
 
         //call avoidDuplicationOfUniqueData method on bad credentials and assert true.
-        $this->assertTrue($trait->avoidDuplicationOfUniqueData($bad1, $user->getModelAttributes(), $user->getClassName()));
+        $this->assertTrue($trait->avoidDuplicationOfUniqueData($bad1, $user->getAttributes(), $user->getClassName()));
 
     }
 
@@ -613,6 +613,34 @@ class TraitConcreteTest extends \TestCase {
         $this->assertEquals('testtest12345', $userToTest->password);
         $this->assertEquals($userForDynamicTesting->getClassName(), '\\'.get_class($userToTest));
 
+    }
+
+
+    /**
+     *Test method stores an Eloquent model in its database table.
+     */
+    public function test_repositoryTrait_storeEloquentModelInDatabase_method()
+    {
+        //trait concrete
+        $trait = new TraitConcrete();
+
+        //create user with attributes
+        $user = User::create([
+            'email' => 'repositoryTrait@storeEloquentModelInDatabase.com',
+            'password' => 'testtest12345'
+        ]);
+
+        //call storeEloquentModelInDatabase method on user and store in variable.
+        $userStored = $trait->storeEloquentModelInDatabase($user);
+
+        //user variable->id to retrieve the user from the database and assert its attributes.
+        $userFromDatabase = User::find($userStored->id);
+        $this->assertTrue($userFromDatabase->email == 'repositoryTrait@storeEloquentModelInDatabase.com');
+        $this->assertTrue($userFromDatabase->password == 'testtest12345');
+        $this->assertTrue($userFromDatabase->id == $userStored->id);
+
+        //delete the user from the database table
+        User::destroy($userStored->id);
     }
 
 }

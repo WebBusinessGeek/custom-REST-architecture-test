@@ -11,4 +11,14 @@ namespace App\Polymorphic;
 
 trait ResponderTrait {
 
+    /**
+     * Returns a string passed in as an argument.
+     * @param $message
+     * @return mixed
+     */
+    public function sendMessage($message)
+    {
+        return $message;
+    }
+
 }

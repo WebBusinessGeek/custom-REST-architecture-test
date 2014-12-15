@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 abstract class InternalService {
 
-    use ValidatorTrait, ResponderTrait, FactoryTrait, RepositoryTrait, InvokerTrait;
+    use ValidatorTrait, ResponderTrait,  RepositoryTrait;
 
     public $model;
 
@@ -41,6 +41,26 @@ abstract class InternalService {
         {
             throw new MissingMandatoryParametersException('No model on class or no attributes on model');
         }
+    }
+
+
+    /**
+     * Returns $model's attributes as a multidimensional array.
+     * @return mixed
+     */
+    public function getModelAttributes()
+    {
+        return $this->model->getAttributes();
+    }
+
+
+    /**
+     * Return $model's class name.
+     * @return mixed
+     */
+    public function getModelClassName()
+    {
+        return $this->model->getClassName();
     }
 
 }

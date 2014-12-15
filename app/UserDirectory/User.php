@@ -105,7 +105,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * Returns the models attributes and configuration values as multi-dimensional array.
 	 * @return array
 	 */
-	public function getModelAttributes()
+	public function getAttributes()
 	{
 		return $this->modelAttributes;
 	}

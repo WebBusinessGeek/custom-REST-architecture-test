@@ -35,16 +35,8 @@ class WelcomeController extends Controller {
 	{
 		return view('welcome');
 
-//		$trait = new TraitConcrete();
-//		$user = new User();
-//
-//		dd($trait->dataIsUnique('tanya.reichert@yahoo.com', 'email', $user->getClassName()));
 
-//		$trait = new TraitConcrete();
-//
-//		$user = $trait->createNewModel('\App\UserDirectory\User');
-//
-//		dd($user);
+
 
 
 

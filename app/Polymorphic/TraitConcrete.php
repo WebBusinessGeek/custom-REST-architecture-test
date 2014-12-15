@@ -11,11 +11,18 @@ namespace App\Polymorphic;
 
 use App\UserDirectory\User;
 use App\UserDirectory\UserInternalService;
+use Illuminate\Database\Eloquent\Model;
 
 class TraitConcrete {
 
     use AuthorizationTrait, AuthorizationTrait,
          RepositoryTrait, ResponderTrait, ValidatorTrait;
+
+
+
+
+
+
 
 
 
