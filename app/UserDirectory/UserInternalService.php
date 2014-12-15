@@ -27,7 +27,7 @@ class UserInternalService extends InternalService {
         //checks before placing values
             //must check if model accepts the keys - DONE
             //must check that all non Nullable values were sent - DONE
-            //must check if they are in a valid format - Working!
+            //must check if they are in a valid format - DONE
                 // password - done
                 // email - done
             //must check if all mandatory unique values are unique - notDone
