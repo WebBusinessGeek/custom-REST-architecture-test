@@ -419,4 +419,80 @@ class TraitConcreteTest extends \TestCase {
         $this->assertFalse($trait->emailIsValid($bad2));
     }
 
+
+    /**
+     *Test method returns true if all valid formats are given, otherwise false.
+     */
+    public function test_validatorTrait_checkAllFormatsAreValid_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //model attributes mock array
+        $modelAttributesMock = [
+                0 => [
+                'name' => 'email',
+
+                'format' => 'email',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'enumValues' => [
+
+                ]
+            ],
+
+                1 => [
+                'name' => 'password',
+
+                'format' => 'password',
+
+                'nullable' => false,
+
+                'unique' => false,
+
+                'enumValues' => [
+
+                ]
+            ],
+
+	    ];
+        //good credentials associative array
+        $good1 = [
+            'email' => 'someEmail@email.com',
+
+            'password' => 'goodPassword1234'
+        ];
+
+        $good2 = [
+            'email' => 'someEmail@email.me',
+
+            'password' => 'anotherGood443478347'
+        ];
+
+        //bad credentials associative array
+        $bad1 = [
+            'email' => 'someEmail@email',
+
+            'password' => 'badPassword'
+        ];
+
+        $bad2 = [
+            'email' => 'someEmail@.com',
+
+            'password' => 'anotherBad$&*(%'
+        ];
+
+        //call checkAllFormatsAreValid method on good creds and assert true
+        $this->assertTrue($trait->checkAllFormatsAreValid($good1, $modelAttributesMock));
+        $this->assertTrue($trait->checkAllFormatsAreValid($good2, $modelAttributesMock));
+
+        //call checkAllFormatsAreValid method on bad creds and assert false
+        $this->assertFalse($trait->checkAllFormatsAreValid($bad1, $modelAttributesMock));
+        $this->assertFalse($trait->checkAllFormatsAreValid($bad2, $modelAttributesMock));
+
+    }
+
 }

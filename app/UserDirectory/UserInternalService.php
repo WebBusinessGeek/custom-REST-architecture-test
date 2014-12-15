@@ -20,7 +20,7 @@ class UserInternalService extends InternalService {
 
     }
 
-    public function store($credentialsOrAttributes =[], $owner_id = null)
+    public function store($credentialsOrAttributes =[], $owner_id = null, $ownerType = null)
     {
         //take associative array
 
@@ -31,7 +31,7 @@ class UserInternalService extends InternalService {
                 // password - done
                 // email - done
             //must check if all mandatory unique values are unique - notDone
-            //check if owner exists - notDone // should I do this???
+
 
         //if all good
             //place values on model by its keys

@@ -24,4 +24,7 @@ class TraitConcrete {
 
 
 
+
+
+
 }

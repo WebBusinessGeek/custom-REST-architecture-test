@@ -151,6 +151,26 @@ trait ValidatorTrait {
         return (filter_var($emailToCheck, FILTER_VALIDATE_EMAIL))? true : false ;
     }
 
+    /**
+     * Returns true if all credentials are in valid format, otherwise false.
+     * @param array $credentialsToCheck
+     * @param array $modelAttributes
+     * @return bool
+     */
+    public function checkAllFormatsAreValid($credentialsToCheck = array(), $modelAttributes = array())
+    {
+        $falseCounter = 0;
+        $formatCheck = $this->getModelAttributeConfiguration($modelAttributes, 'format');
+
+        foreach($credentialsToCheck as $key => $value)
+        {
+            $formattingMethod = $formatCheck[$key] .'isValid';
+            ($this->$formattingMethod($value)) ? : $falseCounter++;
+        }
+
+        return ($falseCounter <= 0) ? : false;
+    }
+
 
 
 }
