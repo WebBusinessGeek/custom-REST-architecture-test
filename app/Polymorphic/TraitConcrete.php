@@ -18,6 +18,20 @@ class TraitConcrete {
          RepositoryTrait, ResponderTrait, ValidatorTrait;
 
 
+    //place values on model by its keys - Working
+
+    public function addAttributesToModel($credentials = array(), $className)
+    {
+        //create new model
+
+        //foreach run addSingleAttributeToModel
+    }
+
+
+
+
+
+
 
 
 

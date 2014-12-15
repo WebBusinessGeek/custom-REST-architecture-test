@@ -11,4 +11,15 @@ namespace App\Polymorphic;
 
 trait FactoryTrait {
 
+
+    /**
+     * Returns a new instance of the class name passed in.
+     * PHP will throw FATAL ERROR if the class name does not exist.
+     * @param $className
+     */
+    public function createNewModel($className)
+    {
+        $instance = new $className;
+    }
+
 }

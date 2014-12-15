@@ -186,7 +186,7 @@ trait ValidatorTrait {
         return ('\\'. get_class($instanceCheck) == $modelClassName)? false : true ;
     }
 
-    
+
     /**
      * Returns true if no duplicated data has been passed to a unique attribute, otherwise false.
      * @param array $credentials

@@ -568,4 +568,24 @@ class TraitConcreteTest extends \TestCase {
 
     }
 
+
+    /**
+     *Test method returns a new instance of a model class.
+     */
+    public function test_repositoryTrait_createNewModel()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //instance to make test dynamic to location of class and avoid clashes later.
+        $user = new User();
+
+        //call createNewModel() function and store in variable
+        $testModel = $trait->createNewModel('\\'. get_class($user));
+
+        //assert that model exists
+        $this->assertTrue('\\' . get_class($testModel) == '\\'. get_class($user));
+
+    }
+
 }

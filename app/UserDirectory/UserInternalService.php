@@ -30,14 +30,14 @@ class UserInternalService extends InternalService {
             //must check if they are in a valid format - DONE
                 // password - done
                 // email - done
-            //must check if all mandatory unique values are unique - WORKING!
+            //must check if all mandatory unique values are unique - DONE
 
 
         //if all good
-            //place values on model by its keys
+            //place values on model by its keys - Working
 
         //if issues
-            //return error message
+            //return error message - NOT Done
 
     }
 
