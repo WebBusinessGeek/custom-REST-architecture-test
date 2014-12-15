@@ -643,4 +643,42 @@ class TraitConcreteTest extends \TestCase {
         User::destroy($userStored->id);
     }
 
+
+    /**
+     *Test method returns the eloquent model specified, otherwise returns an error message.
+     */
+    public function test_repositoryTrait_getEloquentModelFromDatabase_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //create user and store in database and store response in variable
+        $attr =
+            [
+                'email' => 'repositoryTrait@getEloquentModelFromDatabaseMethodTest.com',
+                'password' => 'testtest123456'
+            ];
+
+        $userForNameSpace = new User();
+
+        $newUser = $trait->storeEloquentModelInDatabase($trait->addAttributesToModel($attr,$userForNameSpace->getClassName()));
+
+        //call getEloquentModelFromDatabase using variable->id and variable->getClassName
+        $userFromDB = $trait->getEloquentModelFromDatabase($newUser->id, $userForNameSpace->getClassName());
+
+        //assert instance's attributes and id
+        $this->assertEquals($userFromDB->email, 'repositoryTrait@getEloquentModelFromDatabaseMethodTest.com');
+        $this->assertTrue($userFromDB->password == 'testtest123456');
+        $this->assertTrue($userFromDB->id == $newUser->id);
+
+        //delete user from database
+        User::destroy($userFromDB->id);
+
+        //call getEloquentModelFromDatabase on bad id and assert error message.
+        $badId = $trait->getEloquentModelFromDatabase('aaa', $userForNameSpace->getClassName());
+        $this->assertTrue($badId == 'Model not found.');
+
+
+    }
+
 }

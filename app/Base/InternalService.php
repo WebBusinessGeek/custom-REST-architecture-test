@@ -24,9 +24,9 @@ abstract class InternalService {
 
     abstract public function index();
 
-    abstract public function store($credentialsOrAttributes =[], $owner_id = null, $ownerType = null);
+    abstract public function store($credentialsOrAttributes =[]);
 
-    abstract public function show();
+    abstract public function show($model_id);
 
     abstract public function update();
 

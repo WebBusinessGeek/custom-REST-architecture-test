@@ -12,12 +12,12 @@ namespace App\Polymorphic;
 use App\UserDirectory\User;
 use App\UserDirectory\UserInternalService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TraitConcrete {
 
     use AuthorizationTrait, AuthorizationTrait,
          RepositoryTrait, ResponderTrait, ValidatorTrait;
-
 
 
 

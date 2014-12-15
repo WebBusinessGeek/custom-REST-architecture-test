@@ -32,7 +32,7 @@ class UserInternalService extends InternalService {
      * @param null $ownerType
      * @return \Illuminate\Database\Eloquent\Model|mixed
      */
-    public function store($credentialsOrAttributes =[], $owner_id = null, $ownerType = null)
+    public function store($credentialsOrAttributes =[])
     {
         return
             (
@@ -45,9 +45,13 @@ class UserInternalService extends InternalService {
                 :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
     }
 
-    public function show()
+    public function show($model_id)
     {
+        //try to retrieve instance
 
+        //if instance return the model
+
+        //if not return error message
     }
 
     public function update()

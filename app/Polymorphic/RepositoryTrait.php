@@ -10,6 +10,7 @@ namespace App\Polymorphic;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 trait RepositoryTrait {
 
@@ -23,6 +24,30 @@ trait RepositoryTrait {
         $model->save();
         return $model;
     }
+
+
+
+    /**
+     * Returns model specified, otherwise throws an error. Will cause FATAL ERROR if class name cannot be found.
+     * @param $model_id
+     * @param $className
+     * @return string
+     */
+    public function getEloquentModelFromDatabase($model_id, $className)
+    {
+        try
+        {
+            return $className::findOrFail($model_id);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return 'Model not found.';
+        }
+    }
+
+
+
+
 
 
 }
