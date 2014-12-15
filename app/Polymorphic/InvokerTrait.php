@@ -13,6 +13,7 @@ use Symfony\Component\Process\Exception\InvalidArgumentException;
 
 trait InvokerTrait {
 
+    use FactoryTrait;
 
     /**
      * Returns a named array of the specified configuration values. Otherwise throws an exception.
@@ -54,6 +55,25 @@ trait InvokerTrait {
                 array_push($configNameArray, $attribute['name']);
             }
             return $configNameArray;
+    }
+
+    /**
+     * Dynamically adds attributes to a new model instance.
+     * @param array $attributes
+     * @param $className
+     * @return mixed
+     */
+    public function addAttributesToModel($attributes = array(), $className)
+    {
+
+        $model = $this->createNewModel($className);
+
+        foreach($attributes as $key => $value)
+        {
+            $model->$key = $value;
+        }
+
+        return $model;
     }
 
 }

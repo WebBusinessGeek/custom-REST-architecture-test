@@ -34,7 +34,9 @@ class UserInternalService extends InternalService {
 
 
         //if all good
-            //place values on model by its keys - Working
+            //place values on model by its keys - DONE
+            //save to database - not done
+            //return the instance? - not done
 
         //if issues
             //return error message - NOT Done

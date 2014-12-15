@@ -11,7 +11,7 @@ namespace App\Polymorphic;
 
 trait ValidatorTrait {
 
-    use InvokerTrait, RepositoryTrait;
+    use InvokerTrait;
 
     /**
      * Returns true if array passed in contains keys the model will accept as attributes.

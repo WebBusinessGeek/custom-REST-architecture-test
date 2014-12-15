@@ -19,7 +19,7 @@ trait FactoryTrait {
      */
     public function createNewModel($className)
     {
-        $instance = new $className;
+      return  $instance = new $className;
     }
 
 }
