@@ -54,13 +54,14 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'host'      => '127.0.0.1', //127.0.0.1 for [ ] or local for [ ]
+			'database'  => 'restArchitecture',
+			'username'  => 'homestead',
+			'password'  => 'secret',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
+			'port' 		=> 33060,
 		],
 
 		'pgsql' => [

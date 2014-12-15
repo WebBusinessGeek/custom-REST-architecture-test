@@ -35,13 +35,14 @@ class WelcomeController extends Controller {
 	{
 		return view('welcome');
 
-//		$invalidChar = "/[$%^&*()\-_+={}|\\[\]:;\"'<>?,.\/]/";
-//
 //		$trait = new TraitConcrete();
+//		$user = new User();
 //
-//		$str = 'asdlkfjkej34203984209309(0';
-//
-//		dd($trait->ensureNoInvalidCharactersUsed($str, $invalidChar));
+//		dd($trait->dataIsUnique('tanya.reichert@yahoo.com', 'email', $user->getClassName()));
+
+
+
+
 
 
 

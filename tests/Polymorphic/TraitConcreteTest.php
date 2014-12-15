@@ -495,4 +495,48 @@ class TraitConcreteTest extends \TestCase {
 
     }
 
+
+    /**
+     *Test method returns true if value is unique to class, otherwise false
+     */
+    public function test_validatorTrait_dataIsUnique_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //save new user
+        $user = User::create([
+            'email' => 'validatorTrait@dataIsUniqueMethodTest.com',
+
+            'password' => 'testtest1234',
+        ]);
+
+        $user->save();
+
+        //call dataIsUnique and assert false on a saved user attribute
+        $this->assertFalse($trait->dataIsUnique(
+            'validatorTrait@dataIsUniqueMethodTest.com',
+            'email',
+            $user->getClassName()));
+
+
+        //delete user from DB
+        $user->delete();
+
+        //call dataIsUnique and assert true on bad data
+        $this->assertTrue($trait->dataIsUnique(
+            'badEmail222@email.com',
+            'email',
+            $user->getClassName()));
+
+    }
+
+    /**
+     *Test method returns true if all values are unique where necessary, otherwise false.
+     */
+    public function test_validatorTrait_avoidDuplicationOfUniqueData_method()
+    {
+
+    }
+
 }

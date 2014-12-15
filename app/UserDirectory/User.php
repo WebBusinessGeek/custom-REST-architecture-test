@@ -120,4 +120,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	}
 
 
+	/**
+	 * Returns the models class as a string.
+	 * @return string
+     */
+	public function getClassName()
+	{
+		return '\\'. get_class($this);
+	}
+
+
 }

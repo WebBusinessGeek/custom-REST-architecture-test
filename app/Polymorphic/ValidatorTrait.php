@@ -172,5 +172,20 @@ trait ValidatorTrait {
     }
 
 
+    /**
+     * Returns true if unique value is not present in database table already, otherwise false.
+     * @param $dataToCheck
+     * @param $dataName
+     * @param $modelClassName
+     * @return bool
+     */
+    public function dataIsUnique($dataToCheck, $dataName, $modelClassName)
+    {
+        $instanceCheck = $modelClassName::where($dataName, '=', $dataToCheck)->first();
+
+        return ('\\'. get_class($instanceCheck) == $modelClassName)? false : true ;
+    }
+
+
 
 }
