@@ -47,11 +47,7 @@ class UserInternalService extends InternalService {
 
     public function show($model_id)
     {
-        //try to retrieve instance
-
-        //if instance return the model
-
-        //if not return error message
+       return $this->getEloquentModelFromDatabase($model_id, $this->getModelClassName());
     }
 
     public function update()

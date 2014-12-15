@@ -58,4 +58,23 @@ class UserInternalServiceTest extends \TestCase{
         $this->assertEquals('Error. Invalid attributes or duplicate data.', $userBad2);
 
     }
+
+
+    /**
+     *Test method returns User instance from database, otherwise an error message.
+     */
+    public function test_userInternalService_show_method()
+    {
+        //userService instance
+
+        //create a user and store them in database and save response in variable
+
+        //call show method using variable->id
+
+        //assert attributes
+
+        //call show method on bogus id
+
+        //assert error message
+    }
 }
