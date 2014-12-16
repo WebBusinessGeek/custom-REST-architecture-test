@@ -721,4 +721,38 @@ class TraitConcreteTest extends \TestCase {
         User::destroy($userToStore->id);
     }
 
+
+    /**
+     *Test method deletes a Eloquent model from the database.
+     */
+    public function test_repositoryTrait_deleteEloquentModelFromDatabase_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //create user and store in database, store response in variable
+        $attr = [
+            'email' => 'repositoryTrait@deleteEloquentModelFromDatabase.com',
+            'password' => 'testtest123456'
+        ];
+
+        $userNameSpace = new User();
+
+        $userStored = $trait->storeEloquentModelInDatabase($trait->addAttributesToNewModel($attr, $userNameSpace->getClassName()));
+
+        //assert its in database using variable->id
+        $userFromDb = $trait->getEloquentModelFromDatabase($userStored->id, $userNameSpace->getClassName());
+        $this->assertEquals('repositoryTrait@deleteEloquentModelFromDatabase.com', $userFromDb->email);
+        $this->assertEquals('testtest123456', $userFromDb->password);
+        $this->assertEquals($userStored->id , $userFromDb->id);
+
+        //call deleteEloquentModelFromDatabase method on variable->id
+        $trait->deleteEloquentModelFromDatabase($userFromDb, $userNameSpace->getClassName());
+
+        //assert its no longer in database
+        $proveDelete = $trait->getEloquentModelFromDatabase($userStored->id, $userNameSpace->getClassName());
+        $this->assertEquals('Model not found.', $proveDelete);
+
+    }
+
 }

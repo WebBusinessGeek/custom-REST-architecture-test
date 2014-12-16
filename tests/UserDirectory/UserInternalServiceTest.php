@@ -9,6 +9,7 @@
 namespace tests\UserDirectory;
 
 
+use App\Polymorphic\TraitConcrete;
 use App\UserDirectory\User;
 use App\UserDirectory\UserInternalService;
 use Illuminate\Foundation\Testing\TestCase;
@@ -95,7 +96,7 @@ class UserInternalServiceTest extends \TestCase{
     }
 
     /**
-     *Test method updates a User model if attributes are valid and instance specified exits, otherwise returns error message.
+     *Test method updates a User model if attributes are valid and instance specified exists, otherwise returns error message.
      */
     public function test_userInternalService_update_method()
     {
@@ -131,5 +132,34 @@ class UserInternalServiceTest extends \TestCase{
         //assert error message on bad info
         $errorMsg = $userService->update('aaa', $newAttr);
         $this->assertEquals('Model not found.', $errorMsg);
+    }
+
+
+    /**
+     *Test method deletes a User instance from database if instance specified exists, otherwise returns an error message.
+     */
+    public function test_userInternalService_destroy_method()
+    {
+        //userInternalService instance
+        $userService = new UserInternalService();
+        //create user and store in database, store response in variable
+        $attr = [
+            'email' => 'userInternalService@destroyMethodTest.com',
+            'password' => 'testtest123456'
+        ];
+
+        $newUser = $userService->store($attr);
+
+        //assert that its indeed store in the database using variable->id
+        $userFromDB = $userService->show($newUser->id);
+        $this->assertEquals('userInternalService@destroyMethodTest.com', $userFromDB->email);
+        $this->assertEquals('testtest123456', $userFromDB->password);
+        $this->assertEquals($newUser->id, $userFromDB->id);
+
+        //call destroy method on instance
+        $userService->destroy($newUser->id);
+
+        //assert its no longer in the database
+        $this->assertEquals('Model not found.', $userService->show($newUser));
     }
 }

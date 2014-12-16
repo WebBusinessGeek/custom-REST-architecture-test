@@ -46,6 +46,18 @@ trait RepositoryTrait {
     }
 
 
+    /**
+     * Deletes Model passed in. Returns true if Model was deleted.
+     * @param Model $model
+     * @param $className
+     * @return mixed
+     */
+    public function deleteEloquentModelFromDatabase(Model $model, $className)
+    {
+        return $className::destroy($model->id);
+    }
+
+
 
 
 

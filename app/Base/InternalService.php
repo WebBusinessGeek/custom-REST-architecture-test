@@ -30,7 +30,7 @@ abstract class InternalService {
 
     abstract public function update($model_id, $attributes = array());
 
-    abstract public function destroy();
+    abstract public function destroy($model_id);
 
     /**
      *Ensures requirements are set on services and their models.
@@ -79,6 +79,16 @@ abstract class InternalService {
         $this->avoidDuplicationOfUniqueData($attributes, $this->getModelAttributes(), $this->getModelClassName())
        == true ) ? :false;
 
+    }
+
+    /**
+     * Returns true if passed in Model instance is an actual instance, otherwise false.
+     * @param $potentialModel
+     * @return bool
+     */
+    public function isModelInstance($potentialModel)
+    {
+        return (is_object($potentialModel) && '\\'. get_class($potentialModel) == $this->getModelClassName());
     }
 
 }

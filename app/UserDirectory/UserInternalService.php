@@ -59,7 +59,7 @@ class UserInternalService extends InternalService {
     {
         $potentialModel = $this->show($model_id);
 
-        if(is_object($potentialModel) && '\\'. get_class($potentialModel) == $this->getModelClassName())
+        if($this->isModelInstance($potentialModel))
         {
             return ($this->checkAttributes($attributes))
                 ? $this->storeEloquentModelInDatabase($this->addAttributesToExistingModel($potentialModel, $attributes))
@@ -69,11 +69,24 @@ class UserInternalService extends InternalService {
     }
 
 
-
-    public function destroy()
+    /**
+     * Removes User instance from database table if instance exists, otherwise returns error message.
+     * @param $model_id
+     * @return string
+     */
+    public function destroy($model_id)
     {
+        $potentialModel = $this->show($model_id);
 
+        if($this->isModelInstance($potentialModel))
+        {
+           $this->deleteEloquentModelFromDatabase($potentialModel, $this->getModelClassName());
+        }
+        return $potentialModel;
     }
+
+
+
 
 
 }
