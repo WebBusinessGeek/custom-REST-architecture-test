@@ -66,15 +66,31 @@ class UserInternalServiceTest extends \TestCase{
     public function test_userInternalService_show_method()
     {
         //userService instance
+        $userService = new UserInternalService();
 
         //create a user and store them in database and save response in variable
+        $attr = [
+            'email' => 'userInternalService@showMethodTest.com',
+            'password' => 'testtest123456'
+        ];
+
+        $user = $userService->store($attr);
 
         //call show method using variable->id
+        $userFromDB = $userService->show($user->id);
 
         //assert attributes
+        $this->assertTrue($userFromDB->email == 'userInternalService@showMethodTest.com');
+        $this->assertTrue($userFromDB->password == 'testtest123456');
+        $this->assertTrue($user->id == $userFromDB->id);
+
+        //delete user
+        User::destroy($user->id);
 
         //call show method on bogus id
+        $badShow = $userService->show('aaa');
 
         //assert error message
+        $this->assertTrue('Model not found.' == $badShow);
     }
 }

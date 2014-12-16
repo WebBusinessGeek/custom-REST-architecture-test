@@ -45,14 +45,30 @@ class UserInternalService extends InternalService {
                 :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
     }
 
+    /**
+     * Return specified User from users database table.
+     * @param $model_id
+     * @return string
+     */
     public function show($model_id)
     {
        return $this->getEloquentModelFromDatabase($model_id, $this->getModelClassName());
     }
 
+
+
     public function update()
     {
+        //call show method
 
+        //check if instance or error message
+
+            // if instance
+                //update logic
+                //return instance
+
+            // if error message
+                //return error message
     }
 
     public function destroy()
