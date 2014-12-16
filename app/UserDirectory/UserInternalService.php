@@ -10,6 +10,8 @@ namespace App\UserDirectory;
 
 
 use App\Base\InternalService;
+use Illuminate\Pagination\PaginationServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 class UserInternalService extends InternalService {
 
@@ -21,7 +23,7 @@ class UserInternalService extends InternalService {
 
     public function index()
     {
-
+        //return all users is too much data. How do i limit it? How does pagination work in Laravel 5?
     }
 
     /**
