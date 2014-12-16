@@ -34,13 +34,7 @@ class UserInternalService extends InternalService {
      */
     public function store($credentialsOrAttributes =[])
     {
-        return
-            (
-                $this->modelAcceptsAttributes($credentialsOrAttributes, $this->getModelAttributes()) &&
-                $this->modelNonNullableAttributesSet($credentialsOrAttributes, $this->getModelAttributes()) &&
-                $this->checkAllFormatsAreValid($credentialsOrAttributes, $this->getModelAttributes()) &&
-                $this->avoidDuplicationOfUniqueData($credentialsOrAttributes, $this->getModelAttributes(), $this->getModelClassName())
-            )
+        return ($this->checkAttributes($credentialsOrAttributes))
                 ?  $this->storeEloquentModelInDatabase($this->addAttributesToModel($credentialsOrAttributes, $this->getModelClassName()))
                 :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
     }
@@ -57,15 +51,27 @@ class UserInternalService extends InternalService {
 
 
 
-    public function update()
+    public function update($model_id, $attributes = array())
     {
-        //call show method
+        //call show method - DONE
+        $potentialModel = $this->show($model_id);
 
         //check if instance or error message
-
+        if(is_object($potentialModel) && get_class($potentialModel) == $this->getModelClassName())
+        {
             // if instance
                 //update logic
+                //get whats being updated
+                //ensure model accepts attributes - done
+                //ensure non nullable attributes are set - done
+                //ensure valid format - done
+                //ensure no duplicate data - done
+                //save changes - NO Done
                 //return instance
+            ($this->checkAttributes($attributes))
+                ? true //call a add attributes function
+                : false; //return error message
+        }
 
             // if error message
                 //return error message

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89654f89-71df-4433-8b85-4d76f96543b5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Base/InternalService.php" afterPath="$PROJECT_DIR$/app/Base/InternalService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/UserDirectory/UserInternalService.php" afterPath="$PROJECT_DIR$/app/UserDirectory/UserInternalService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/UserDirectory/UserInternalServiceTest.php" afterPath="$PROJECT_DIR$/tests/UserDirectory/UserInternalServiceTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -32,8 +33,8 @@
       <file leaf-file-name="UserInternalService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5683453" vertical-offset="1155" max-vertical-offset="2000">
-              <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.676259" vertical-offset="1280" max-vertical-offset="2150">
+              <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -271,15 +272,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -314,13 +315,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -346,22 +347,32 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="2000">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/UserDirectory/UserInternalServiceTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1975">
           <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
           <folding>
-            <marker date="1418690440000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1418690440000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="Test method stores and returns a new User instance if all checks pass, otherwise returns an error message. ..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="Test method returns User instance from database, otherwise an error message. ..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418693369000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="Test method stores and returns a new User instance if all checks pass, otherwise returns an error message. ..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="Test method returns User instance from database, otherwise an error message. ..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="Test method updates a User model if attributes are valid and instance specified exits, otherwise returns error message. ..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -642,14 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Base/InternalService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82733816" vertical-offset="0" max-vertical-offset="1525">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Polymorphic/InvokerTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35539567" vertical-offset="1253" max-vertical-offset="1975">
@@ -694,30 +697,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Base/InternalService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8201439" vertical-offset="1180" max-vertical-offset="1975">
+          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+          <folding>
+            <marker date="1418693165000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418693165000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder="Ensures requirements are set on services and their models. ..." />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder=" Returns $model's attributes as a multidimensional array. ..." />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder=" Return $model's class name. ..." />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder=" Returns true if all values and attributes are valid, otherwise false. ..." />
+            <marker date="1418693165000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/UserDirectory/UserInternalServiceTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74820143" vertical-offset="1680" max-vertical-offset="2375">
-          <caret line="95" column="1" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.5323741" vertical-offset="1880" max-vertical-offset="2575">
+          <caret line="97" column="94" selection-start-line="97" selection-start-column="94" selection-end-line="97" selection-end-column="94" />
           <folding>
-            <marker date="1418690440000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1418690440000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="Test method stores and returns a new User instance if all checks pass, otherwise returns an error message. ..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="Test method returns User instance from database, otherwise an error message. ..." />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418690440000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418693369000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="Test method stores and returns a new User instance if all checks pass, otherwise returns an error message. ..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="Test method returns User instance from database, otherwise an error message. ..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="Test method updates a User model if attributes are valid and instance specified exits, otherwise returns error message. ..." />
+            <marker date="1418693369000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5683453" vertical-offset="1155" max-vertical-offset="2000">
-          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.676259" vertical-offset="1280" max-vertical-offset="2150">
+          <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
           <folding />
         </state>
       </provider>

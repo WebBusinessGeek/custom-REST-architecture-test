@@ -28,7 +28,7 @@ abstract class InternalService {
 
     abstract public function show($model_id);
 
-    abstract public function update();
+    abstract public function update($model_id, $attributes = array());
 
     abstract public function destroy();
 
@@ -61,6 +61,24 @@ abstract class InternalService {
     public function getModelClassName()
     {
         return $this->model->getClassName();
+    }
+
+
+    /**
+     * Returns true if all values and attributes are valid, otherwise false.
+     * No tests for function directly!
+     * @param array $attributes
+     * @return bool
+     */
+    public function checkAttributes($attributes = array())
+    {
+       return (
+        $this->modelAcceptsAttributes($attributes, $this->getModelAttributes()) &&
+        $this->modelNonNullableAttributesSet($attributes, $this->getModelAttributes()) &&
+        $this->checkAllFormatsAreValid($attributes, $this->getModelAttributes()) &&
+        $this->avoidDuplicationOfUniqueData($attributes, $this->getModelAttributes(), $this->getModelClassName())
+       == true ) ? :false;
+
     }
 
 }

@@ -93,4 +93,12 @@ class UserInternalServiceTest extends \TestCase{
         //assert error message
         $this->assertTrue('Model not found.' == $badShow);
     }
+
+    /**
+     *Test method updates a User model if attributes are valid and instance specified exits, otherwise returns error message.
+     */
+    public function test_userInternalService_update_method()
+    {
+
+    }
 }
