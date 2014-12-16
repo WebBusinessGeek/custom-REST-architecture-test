@@ -606,7 +606,7 @@ class TraitConcreteTest extends \TestCase {
         //call addAttributesToModel and store repsonse in variable
         $userForDynamicTesting = new User();
 
-        $userToTest = $trait->addAttributesToModel($attr, $userForDynamicTesting->getClassName());
+        $userToTest = $trait->addAttributesToNewModel($attr, $userForDynamicTesting->getClassName());
 
         //assert variable's attributes and class name
         $this->assertEquals('invokerTrait@addAttributesToModelMethodTest.com', $userToTest->email);
@@ -661,7 +661,7 @@ class TraitConcreteTest extends \TestCase {
 
         $userForNameSpace = new User();
 
-        $newUser = $trait->storeEloquentModelInDatabase($trait->addAttributesToModel($attr,$userForNameSpace->getClassName()));
+        $newUser = $trait->storeEloquentModelInDatabase($trait->addAttributesToNewModel($attr,$userForNameSpace->getClassName()));
 
         //call getEloquentModelFromDatabase using variable->id and variable->getClassName
         $userFromDB = $trait->getEloquentModelFromDatabase($newUser->id, $userForNameSpace->getClassName());
@@ -679,6 +679,46 @@ class TraitConcreteTest extends \TestCase {
         $this->assertTrue($badId == 'Model not found.');
 
 
+    }
+
+
+    /**
+     *Test method adds passed in attributes to existing model
+     */
+    public function test_invokerTrait_addAttributesToExistingModel_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //create user and save in database and store in variable
+        $userNameSpace = new User();
+        $attr = [
+            'email' => 'invokerTrait@addAttributesToExistingModelMethodTest.com',
+            'password' => 'testtest123456'
+        ];
+
+        $userToStore = $trait->storeEloquentModelInDatabase($trait->addAttributesToNewModel($attr, $userNameSpace->getClassName()));
+
+        //assert user is in database and assert its attributes using variable->id
+        $userFromDB = $trait->getEloquentModelFromDatabase($userToStore->id, $userNameSpace->getClassName());
+        $this->assertEquals('invokerTrait@addAttributesToExistingModelMethodTest.com', $userFromDB->email);
+        $this->assertEquals('testtest123456', $userFromDB->password);
+        $this->assertEquals($userToStore->id, $userFromDB->id);
+
+        //call addAttributesToExistingModel method on user from db
+        $newAttr = [
+            'email' => 'invokerTrait@addAttributesToExistingModelMethodTest2.com',
+            'password' => 'testtest654321'
+        ];
+
+        $userUpdated = $trait->addAttributesToExistingModel($userFromDB,$newAttr);
+
+        //assert its changed attributes
+        $this->assertEquals('invokerTrait@addAttributesToExistingModelMethodTest2.com', $userFromDB->email);
+        $this->assertEquals('testtest654321', $userFromDB->password);
+
+        //delete user from database
+        User::destroy($userToStore->id);
     }
 
 }

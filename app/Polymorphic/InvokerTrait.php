@@ -9,6 +9,7 @@
 namespace App\Polymorphic;
 
 
+use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Process\Exception\InvalidArgumentException;
 
 trait InvokerTrait {
@@ -63,7 +64,7 @@ trait InvokerTrait {
      * @param $className
      * @return mixed
      */
-    public function addAttributesToModel($attributes = array(), $className)
+    public function addAttributesToNewModel($attributes = array(), $className)
     {
 
         $model = $this->createNewModel($className);
@@ -73,6 +74,22 @@ trait InvokerTrait {
             $model->$key = $value;
         }
 
+        return $model;
+    }
+
+
+    /**
+     * Adds attributes to an existing Eloquent Model.
+     * @param Model $model
+     * @param $attributes
+     * @return Model
+     */
+    public function addAttributesToExistingModel(Model $model, $attributes)
+    {
+        foreach($attributes as $key => $value)
+        {
+            $model->$key = $value;
+        }
         return $model;
     }
 

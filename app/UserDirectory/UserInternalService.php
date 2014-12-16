@@ -28,14 +28,12 @@ class UserInternalService extends InternalService {
      * Stores a User model into its database table if attributes passed are valid.
      * Otherwise will throw an error message.
      * @param array $credentialsOrAttributes
-     * @param null $owner_id
-     * @param null $ownerType
      * @return \Illuminate\Database\Eloquent\Model|mixed
      */
     public function store($credentialsOrAttributes =[])
     {
         return ($this->checkAttributes($credentialsOrAttributes))
-                ?  $this->storeEloquentModelInDatabase($this->addAttributesToModel($credentialsOrAttributes, $this->getModelClassName()))
+                ?  $this->storeEloquentModelInDatabase($this->addAttributesToNewModel($credentialsOrAttributes, $this->getModelClassName()))
                 :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
     }
 
@@ -50,32 +48,27 @@ class UserInternalService extends InternalService {
     }
 
 
-
+    /**
+     * Updates a User instance if attributes are valid, and instance exists.
+     * Otherwise returns an error message.
+     * @param $model_id
+     * @param array $attributes
+     * @return \Illuminate\Database\Eloquent\Model|mixed|string
+     */
     public function update($model_id, $attributes = array())
     {
-        //call show method - DONE
         $potentialModel = $this->show($model_id);
 
-        //check if instance or error message
-        if(is_object($potentialModel) && get_class($potentialModel) == $this->getModelClassName())
+        if(is_object($potentialModel) && '\\'. get_class($potentialModel) == $this->getModelClassName())
         {
-            // if instance
-                //update logic
-                //get whats being updated
-                //ensure model accepts attributes - done
-                //ensure non nullable attributes are set - done
-                //ensure valid format - done
-                //ensure no duplicate data - done
-                //save changes - NO Done
-                //return instance
-            ($this->checkAttributes($attributes))
-                ? true //call a add attributes function
-                : false; //return error message
+            return ($this->checkAttributes($attributes))
+                ? $this->storeEloquentModelInDatabase($this->addAttributesToExistingModel($potentialModel, $attributes))
+                : $this->sendMessage('Error. Invalid attributes or duplicate data.');
         }
-
-            // if error message
-                //return error message
+        return $potentialModel;
     }
+
+
 
     public function destroy()
     {

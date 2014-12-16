@@ -99,6 +99,37 @@ class UserInternalServiceTest extends \TestCase{
      */
     public function test_userInternalService_update_method()
     {
+        //userInternalService instance
+        $userService = new UserInternalService();
 
+        //create and store a new user instance and store response in variable
+        $attr = [
+            'email' => 'userInternalService@updateMethodTest.com',
+            'password' => 'testtest123456'
+        ];
+
+        $newUser = $userService->store($attr);
+
+        //assert its stored in the database and has correct attributes using variable->id
+        $userFromDB = $userService->show($newUser->id);
+        $this->assertEquals('userInternalService@updateMethodTest.com', $userFromDB->email);
+        $this->assertEquals('testtest123456', $userFromDB->password);
+
+        //call update method on stored instance using same variable->id and assert its changes
+        $newAttr = [
+            'email' => 'userInternalService@updateMethodTest2.com',
+            'password' => 'testtest654321'
+        ];
+
+        $updatedUser = $userService->update($newUser->id, $newAttr);
+        $this->assertEquals('userInternalService@updateMethodTest2.com', $updatedUser->email);
+        $this->assertEquals('testtest654321', $updatedUser->password);
+
+        //delete instance from database
+        User::destroy($newUser->id);
+
+        //assert error message on bad info
+        $errorMsg = $userService->update('aaa', $newAttr);
+        $this->assertEquals('Model not found.', $errorMsg);
     }
 }
