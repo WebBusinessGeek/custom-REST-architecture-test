@@ -75,7 +75,7 @@ abstract class InternalService {
        return (
         $this->modelAcceptsAttributes($attributes, $this->getModelAttributes()) &&
         $this->modelNonNullableAttributesSet($attributes, $this->getModelAttributes()) &&
-        $this->checkAllFormatsAreValid($attributes, $this->getModelAttributes()) &&
+        $this->checkMostFormatsAreValid($attributes, $this->getModelAttributes()) &&
         $this->avoidDuplicationOfUniqueData($attributes, $this->getModelAttributes(), $this->getModelClassName())
        == true ) ? :false;
 

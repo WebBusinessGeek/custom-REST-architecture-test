@@ -20,11 +20,12 @@ class TraitConcrete {
          RepositoryTrait, ResponderTrait, ValidatorTrait;
 
 
-    //ipAddressIsValid method- not done
-    //tokenIsValid method- not done
+
+    //tokenIsValid method- WORKING
     //dateIsValid method- not done
     //timeIsValid method- not done
     //dateTimeIsValid method- not done
+
 
 
 

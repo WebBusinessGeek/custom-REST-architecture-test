@@ -486,12 +486,12 @@ class TraitConcreteTest extends \TestCase {
         ];
 
         //call checkAllFormatsAreValid method on good creds and assert true
-        $this->assertTrue($trait->checkAllFormatsAreValid($good1, $modelAttributesMock));
-        $this->assertTrue($trait->checkAllFormatsAreValid($good2, $modelAttributesMock));
+        $this->assertTrue($trait->checkMostFormatsAreValid($good1, $modelAttributesMock));
+        $this->assertTrue($trait->checkMostFormatsAreValid($good2, $modelAttributesMock));
 
         //call checkAllFormatsAreValid method on bad creds and assert false
-        $this->assertFalse($trait->checkAllFormatsAreValid($bad1, $modelAttributesMock));
-        $this->assertFalse($trait->checkAllFormatsAreValid($bad2, $modelAttributesMock));
+        $this->assertFalse($trait->checkMostFormatsAreValid($bad1, $modelAttributesMock));
+        $this->assertFalse($trait->checkMostFormatsAreValid($bad2, $modelAttributesMock));
 
     }
 
@@ -897,6 +897,46 @@ class TraitConcreteTest extends \TestCase {
         ];
 
         $this->assertFalse($trait->existsIsValid($badAttr, $modelAttr));
+    }
+
+
+    /**
+     *Test method returns true if ip address is in valid format, otherwise false.
+     */
+    public function test_validatorTrait_ipAddressIsValid_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //good ipAddresses
+        $good = [
+            '192.88.99.0',
+            '192.168.0.0',
+            '198.18.0.0',
+            '198.51.100.0',
+            '203.0.113.0'
+        ];
+        //bad ipAddresses
+        $bad = [
+            '12345',
+            '103.10239321',
+            '103.9',
+            '98.99',
+            '90.89.89'
+        ];
+
+        //run ipAddressIsValid on good addresses and assert true
+        foreach($good as $testIp)
+        {
+            $this->assertTrue($trait->ipAddressIsValid($testIp));
+        }
+
+        //run ipAddressIsValid on bad addresses and assert false
+        foreach($bad as $testIp)
+        {
+            $this->assertFalse($trait->ipAddressIsValid($testIp));
+        }
+
     }
 
 }

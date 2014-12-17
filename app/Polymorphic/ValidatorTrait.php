@@ -152,6 +152,16 @@ trait ValidatorTrait {
     }
 
     /**
+     * Returns true if format of ipAddress passed is valid, otherwise false.
+     * @param $ipToCheck
+     * @return bool
+     */
+    public function ipAddressIsValid($ipToCheck)
+    {
+        return (filter_var($ipToCheck, FILTER_VALIDATE_IP))? true : false ;
+    }
+
+    /**
      * Returns true if instances specified exists, otherwise false.
      * @param array $attributes
      * @param array $modelAttributes
@@ -177,20 +187,27 @@ trait ValidatorTrait {
     }
 
     /**
-     * Returns true if all credentials are in valid format, otherwise false.
+     * Returns true if most credentials are in valid format, otherwise false.
+     * DOES NOT RUN ANY {$variable}IsValid METHODS STATED IN $blockFormatCheck ARRAY!!!
+     * THOSE MUST BE RUN SEPARATELY!
      * @param array $credentialsToCheck
      * @param array $modelAttributes
      * @return bool
      */
-    public function checkAllFormatsAreValid($credentialsToCheck = array(), $modelAttributes = array())
+    public function checkMostFormatsAreValid($credentialsToCheck = array(), $modelAttributes = array())
     {
         $falseCounter = 0;
         $formatCheck = $this->getModelAttributeConfiguration($modelAttributes, 'format');
+        $blockFormatCheck = ['exists'];
 
         foreach($credentialsToCheck as $key => $value)
         {
-            $formattingMethod = $formatCheck[$key] .'isValid';
-            ($this->$formattingMethod($value)) ? : $falseCounter++;
+            if(!in_array($formatCheck[$key], $blockFormatCheck))
+            {
+                $formattingMethod = $formatCheck[$key] .'isValid';
+                ($this->$formattingMethod($value)) ? : $falseCounter++;
+            }
+
         }
 
         return ($falseCounter <= 0) ? : false;
