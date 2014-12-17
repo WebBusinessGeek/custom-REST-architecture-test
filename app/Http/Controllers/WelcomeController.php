@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Auth\Auth;
 use App\Polymorphic\TraitConcrete;
 use App\UserDirectory\User;
 
@@ -33,9 +34,16 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
-
-
+//		return view('welcome');
+//
+//		$auth = new Auth();
+//
+//		$user = new User();
+//
+//		$trait = new TraitConcrete();
+//
+//		dd($trait->getModelAttributeConfiguration($auth->getAttributes(), 'exists'));
+//		dd($auth->getAttributes()[0]);
 
 
 

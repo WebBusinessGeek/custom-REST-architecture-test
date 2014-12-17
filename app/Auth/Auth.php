@@ -9,8 +9,13 @@
 namespace App\Auth;
 
 
-class Auth {
+use Illuminate\Database\Eloquent\Model;
 
+class Auth extends Model{
+
+    protected $fillable = [
+        'userId', 'ipAddress', 'publicToken', 'expiresOn', 'hashSecret'
+    ];
     //NEED TO REFACTOR THESE INTO  THEIR OWN CLASS FOR EASY EXTENSION
 
 

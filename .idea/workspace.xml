@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89654f89-71df-4433-8b85-4d76f96543b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Auth/Auth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Auth/AuthExternalService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Auth/AuthInternalService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Auth/AuthInternalServiceInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/UserDirectory/UserInternalService.php" afterPath="$PROJECT_DIR$/app/UserDirectory/UserInternalService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Auth/AuthInternalServiceTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/database/seeds/AuthTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Auth/Auth.php" afterPath="$PROJECT_DIR$/app/Auth/Auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/resources/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Polymorphic/InvokerTrait.php" afterPath="$PROJECT_DIR$/app/Polymorphic/InvokerTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php" afterPath="$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php" afterPath="$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/UserDirectory/User.php" afterPath="$PROJECT_DIR$/app/UserDirectory/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/config/database.php" afterPath="$PROJECT_DIR$/resources/config/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="restArchitectureTest.iws" />
@@ -34,17 +39,12 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="AuthInternalService.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/Auth/AuthInternalService.php">
+          <file leaf-file-name="AuthTableSeeder.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/database/seeds/AuthTableSeeder.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.13922156" vertical-offset="782" max-vertical-offset="1450">
-                  <caret line="43" column="102" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
-                  <folding>
-                    <element signature="e#286#364#0#PHP" expanded="false" />
-                    <element signature="e#1372#1457#0#PHP" expanded="false" />
-                    <element signature="e#1463#1575#0#PHP" expanded="false" />
-                    <element signature="e#1581#1672#0#PHP" expanded="false" />
-                  </folding>
+                <state vertical-scroll-proportion="0.46043167" vertical-offset="280" max-vertical-offset="975">
+                  <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -52,18 +52,36 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="UserInternalService.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4676259" vertical-offset="400" max-vertical-offset="2300">
-                  <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/resources/database/seeds/DatabaseSeeder.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.676259" vertical-offset="5" max-vertical-offset="725">
+                      <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="2014_12_16_234456_create_auths_table.php" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/resources/database/migrations/2014_12_16_234456_create_auths_table.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.13669065" vertical-offset="355" max-vertical-offset="1050">
+                      <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -124,6 +142,82 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seeds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restArchitectureTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -248,7 +342,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28880158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28852922" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -286,30 +380,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="14530" max-vertical-offset="15450">
-          <caret line="594" column="32" selection-start-line="594" selection-start-column="32" selection-end-line="594" selection-end-column="32" />
-          <caret line="601" column="31" selection-start-line="601" selection-start-column="31" selection-end-line="601" selection-end-column="31" />
-          <caret line="611" column="36" selection-start-line="611" selection-start-column="36" selection-end-line="611" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1500">
-          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1175">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="575" max-vertical-offset="1000">
@@ -321,7 +391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1500">
           <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -371,7 +440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1450">
           <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -386,7 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="275" max-vertical-offset="1450">
           <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -488,20 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60431653" vertical-offset="30" max-vertical-offset="775">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2877698" vertical-offset="0" max-vertical-offset="695">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5755396" vertical-offset="0" max-vertical-offset="695">
@@ -544,52 +597,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Polymorphic/InvokerTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5683453" vertical-offset="1705" max-vertical-offset="2400">
-          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43165466" vertical-offset="575" max-vertical-offset="1350">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5755396" vertical-offset="1025" max-vertical-offset="3275">
-          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7122302" vertical-offset="18155" max-vertical-offset="18950">
-          <caret line="752" column="27" selection-start-line="752" selection-start-column="27" selection-end-line="752" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39568347" vertical-offset="75" max-vertical-offset="1275">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/Repository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1438849" vertical-offset="0" max-vertical-offset="7425">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Polymorphic/RepositoryTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46043167" vertical-offset="755" max-vertical-offset="1600">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -614,78 +625,272 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/UserDirectory/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92805755" vertical-offset="2580" max-vertical-offset="3375">
-          <caret line="133" column="0" selection-start-line="37" selection-start-column="4" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Auth/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6345324" vertical-offset="2384" max-vertical-offset="3825">
-          <caret line="118" column="2" selection-start-line="118" selection-start-column="2" selection-end-line="118" selection-end-column="2" />
-          <folding>
-            <marker date="1418755793000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder=" Stores models attributes and their configuration values ..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder=" Returns the models attributes and configuration values as multi-dimensional array. ..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder=" Returns the models class as a string. ..." />
-            <marker date="1418755793000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Base/InternalService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66906476" vertical-offset="1210" max-vertical-offset="2225">
           <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
-          <folding>
-            <marker date="1418745786000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1418745786000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="Ensures requirements are set on services and their models. ..." />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder=" Returns $model's attributes as a multidimensional array. ..." />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder=" Return $model's class name. ..." />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder=" Returns true if all values and attributes are valid, otherwise false. ..." />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder=" Returns true if passed in Model instance is an actual instance, otherwise false. ..." />
-            <marker date="1418745786000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
+    <entry file="file://$PROJECT_DIR$/tests/Auth/AuthInternalServiceTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4676259" vertical-offset="400" max-vertical-offset="2300">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.39568347" vertical-offset="0" max-vertical-offset="625">
+          <caret line="16" column="90" selection-start-line="16" selection-start-column="90" selection-end-line="16" selection-end-column="90" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Auth/AuthInternalService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13922156" vertical-offset="782" max-vertical-offset="1450">
-          <caret line="43" column="102" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
+        <state vertical-scroll-proportion="0.4676259" vertical-offset="200" max-vertical-offset="1375">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="37" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35971224" vertical-offset="400" max-vertical-offset="2300">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Polymorphic/InvokerTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1294964" vertical-offset="360" max-vertical-offset="2375">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/UserDirectory/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5107913" vertical-offset="555" max-vertical-offset="3525">
+          <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45179856" vertical-offset="561" max-vertical-offset="1525">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="2" selection-end-line="44" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Polymorphic/RepositoryTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8561151" vertical-offset="480" max-vertical-offset="1600">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Polymorphic/TraitConcrete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79136693" vertical-offset="0" max-vertical-offset="1600">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Polymorphic/TraitConcreteTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8201439" vertical-offset="20880" max-vertical-offset="21675">
+          <caret line="864" column="5" selection-start-line="864" selection-start-column="5" selection-end-line="864" selection-end-column="5" />
           <folding>
-            <element signature="e#286#364#0#PHP" expanded="false" />
-            <element signature="e#1372#1457#0#PHP" expanded="false" />
-            <element signature="e#1463#1575#0#PHP" expanded="false" />
-            <element signature="e#1581#1672#0#PHP" expanded="false" />
+            <marker date="1418773417000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418773417000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder=" Test if method returns true if passed in array keys are accepted model attributes, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if  mandatory values are set on arrayToCheck, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test that method returns an array of attribute names associated with model. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns associative array of configuration values specified, otherwise throws an error. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if minimum length of characters is met, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if minimum amount of integers used in string met, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if minimum amount of alpha characters are met, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if no invalid characters are set, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test password meets requirements (min. length, min. integers, min. letters, no invalid characters). Returns boolean. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true is valid email format is used, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if all valid formats are given, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if value is unique to class, otherwise false ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if all values are unique where necessary, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns a new instance of a model class. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method adds passed in attributes to specified model and returns the instance. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method stores an Eloquent model in its database table. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns the eloquent model specified, otherwise returns an error message. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method adds passed in attributes to existing model ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method deletes a Eloquent model from the database. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="Test method returns true if instance specified exists, otherwise false. ..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418773417000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/database/migrations/2014_12_16_234456_create_auths_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13669065" vertical-offset="355" max-vertical-offset="1050">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43165466" vertical-offset="1025" max-vertical-offset="3275">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418774630000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/database/seeds/UserTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4011976" vertical-offset="57" max-vertical-offset="725">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <marker date="1418658787000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418658787000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1418658787000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418658787000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418658787000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418658787000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418658787000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.676259" vertical-offset="5" max-vertical-offset="725">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Auth/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39568347" vertical-offset="0" max-vertical-offset="3950">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding>
+            <marker date="1418775253000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder=" Stores models attributes and their configuration values ..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder=" Returns the models attributes and configuration values as multi-dimensional array. ..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder=" Returns the models class as a string. ..." />
+            <marker date="1418775253000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/database/seeds/AuthTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46043167" vertical-offset="280" max-vertical-offset="975">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>

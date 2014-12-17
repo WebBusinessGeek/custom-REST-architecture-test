@@ -59,6 +59,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 //
 //			'unique' => true,
 //
+//			'exists' => null,
+//
 //			'enumValues' => [
 //				'item1',
 //				'item2',
@@ -76,6 +78,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 			'unique' => true,
 
+			'exists' => null,
+
 			'enumValues' => [
 
 			]
@@ -89,6 +93,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			'nullable' => false,
 
 			'unique' => false,
+
+			'exists' => null,
 
 			'enumValues' => [
 

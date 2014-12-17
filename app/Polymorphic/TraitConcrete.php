@@ -19,6 +19,19 @@ class TraitConcrete {
     use AuthorizationTrait, AuthorizationTrait,
          RepositoryTrait, ResponderTrait, ValidatorTrait;
 
+    //existsIsValid method - not done
+    //ipAddressIsValid method- not done
+    //tokenIsValid method- not done
+    //dateIsValid method- not done
+    //timeIsValid method- not done
+    //dateTimeIsValid method- not done
+
+    public function existsIsValid()
+    {
+
+    }
+
+
 
 
 

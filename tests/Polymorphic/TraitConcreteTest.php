@@ -752,7 +752,116 @@ class TraitConcreteTest extends \TestCase {
         //assert its no longer in database
         $proveDelete = $trait->getEloquentModelFromDatabase($userStored->id, $userNameSpace->getClassName());
         $this->assertEquals('Model not found.', $proveDelete);
+    }
 
+    /**
+     *Test method returns true if instance specified exists, otherwise false.
+     */
+    public function test_validatorTrait_existsIsValid_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //array that will contain userId and authId, 'exists' set to their class name. Also include data with 'exists' set to null.
+        $modelAttr = [
+            0 => [
+
+                'name' => 'userId',
+
+                'format' => 'exists',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'exists' => '\App\UserDirectory\User',
+
+                'enumValues' => [
+                    'item1',
+                    'item2',
+                    'item3'
+                ]
+            ],
+
+            1 => [
+
+                'name' => 'authId',
+
+                'format' => 'exists',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'exists' => '\App\Auth\Auth',
+
+                'enumValues' => [
+                    'item1',
+                    'item2',
+                    'item3'
+                ]
+            ],
+
+            2 => [
+
+                'name' => 'password',
+
+                'format' => 'password',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'exists' => null,
+
+                'enumValues' => [
+                    'item1',
+                    'item2',
+                    'item3'
+                ]
+            ],
+
+            3 => [
+
+                'name' => 'email',
+
+                'format' => 'email',
+
+                'nullable' => false,
+
+                'unique' => true,
+
+                'exists' => null,
+
+                'enumValues' => [
+                    'item1',
+                    'item2',
+                    'item3'
+                ]
+            ],
+
+
+
+        ];
+        //create a new user and auth and store them in the database - keep responses in variables.
+        User::create([
+            'email' => '',
+            'password' => ''
+        ])->save();
+
+        \App\Auth\Auth::create([
+
+        ])->save();
+
+        //retrieve models from database using variables->id, assert they are indeed in the database
+
+        //create an array of attributes to pass to function with id's for User & Auth set to variables->id.
+
+        //call the existsIsValid method on attribute array
+
+        //assert true
+
+        //call the existsIsValid method on array with bogus id's and assert error message.
     }
 
 }

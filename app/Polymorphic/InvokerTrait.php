@@ -25,7 +25,7 @@ trait InvokerTrait {
     public function getModelAttributeConfiguration($modelAttributes, $config)
     {
         $configKeys = [
-            'name', 'nullable', 'format', 'unique', 'enumValues'
+            'name', 'nullable', 'format', 'unique', 'enumValues', 'exists'
         ];
 
         if(in_array($config, $configKeys) == true)
