@@ -27,7 +27,7 @@ class AuthTableSeeder extends Seeder{
 
                'publicToken' => $faker->creditCardNumber,
 
-               'expireson' => $faker->dateTimeThisMonth,
+               'expiresOn' => $faker->dateTimeThisMonth,
 
                'hashSecret' => $faker->creditCardNumber
 

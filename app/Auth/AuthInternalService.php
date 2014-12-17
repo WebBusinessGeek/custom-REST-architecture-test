@@ -30,8 +30,8 @@ class AuthInternalService extends InternalService {
             //model accepts attributes - done
             //model non nullable attributes set - done
             //check formats are valid
-                //existsIsValid method - not done
-                //ipAddressIsValid method- not done
+                //existsIsValid method - done
+                //ipAddressIsValid method- NEXT!!
                 //tokenIsValid method- not done
                 //dateIsValid method- not done
                 //timeIsValid method- not done

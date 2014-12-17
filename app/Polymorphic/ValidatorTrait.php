@@ -152,6 +152,31 @@ trait ValidatorTrait {
     }
 
     /**
+     * Returns true if instances specified exists, otherwise false.
+     * @param array $attributes
+     * @param array $modelAttributes
+     * @return bool
+     */
+    public function existsIsValid($attributes = array(), $modelAttributes = array())
+    {
+        $falseCounter = 0;
+        $existsCheck = $this->getModelAttributeConfiguration($modelAttributes, 'exists');
+
+        foreach($attributes as $key => $value)
+        {
+            if($existsCheck[$key] != null)
+            {
+                $potentialModel = $existsCheck[$key]::find($value);
+                if(!is_object($potentialModel) && '\\'. get_class($potentialModel) != $existsCheck[$key])
+                {
+                    $falseCounter++;
+                }
+            }
+        }
+        return ($falseCounter > 0) ? false: true;
+    }
+
+    /**
      * Returns true if all credentials are in valid format, otherwise false.
      * @param array $credentialsToCheck
      * @param array $modelAttributes
@@ -208,6 +233,7 @@ trait ValidatorTrait {
         }
         return ($falseCounter > 0) ? false: true;
     }
+
 
 
 }

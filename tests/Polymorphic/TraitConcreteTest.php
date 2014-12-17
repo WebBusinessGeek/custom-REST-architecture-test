@@ -840,28 +840,63 @@ class TraitConcreteTest extends \TestCase {
                 ]
             ],
 
-
-
         ];
         //create a new user and auth and store them in the database - keep responses in variables.
-        User::create([
-            'email' => '',
-            'password' => ''
-        ])->save();
+        $userId = User::create([
+            'email' => 'validatorTrait@existsIsValidMethodTest.com',
+            'password' => 'testtest123456'
+        ])->id;
 
-        \App\Auth\Auth::create([
+        $authId = \App\Auth\Auth::create([
+            'userId' => 1,
 
-        ])->save();
+            'ipAddress' => '123.020.2012',
 
-        //retrieve models from database using variables->id, assert they are indeed in the database
+            'publicToken' => 'validatorTrait@existsIsValidMethodTest.com',
+
+            'expiresOn' => '2014-10-10 11:11:32',
+
+            'hashSecret' => 'sdkfjefoiwjoijdsflkjdlkj'
+        ])->id;
+
+        //retrieve models from database using variablesId, assert they are indeed in the database
+        $userFromDB = User::find($userId);
+        $authFromDB = \App\Auth\Auth::find($authId);
+        $this->assertEquals('validatorTrait@existsIsValidMethodTest.com', $userFromDB->email);
+        $this->assertEquals('validatorTrait@existsIsValidMethodTest.com', $authFromDB->publicToken);
+
 
         //create an array of attributes to pass to function with id's for User & Auth set to variables->id.
+        $goodAttr = [
+            'userId' => $userId,
+
+            'authId' => $authId,
+
+            'email' => 'validatorTrait@existsIsValidMethodTest2.com',
+
+            'password' => 'testtest123456'
+        ];
 
         //call the existsIsValid method on attribute array
+        $this->assertTrue($trait->existsIsValid($goodAttr, $modelAttr));
 
-        //assert true
+
+        //delete user and auth instances
+        User::destroy($userId);
+        \App\Auth\Auth::destroy($authId);
 
         //call the existsIsValid method on array with bogus id's and assert error message.
+        $badAttr = [
+            'userId' => 'aaa',
+
+            'authId' => 'aaa',
+
+            'email' => 'validatorTrait@existsIValidMethodTest2.com',
+
+            'password' => 'testtest123456'
+        ];
+
+        $this->assertFalse($trait->existsIsValid($badAttr, $modelAttr));
     }
 
 }
