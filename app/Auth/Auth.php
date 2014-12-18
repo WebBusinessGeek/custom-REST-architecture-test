@@ -28,7 +28,7 @@ class Auth extends Model{
 //
 //			'name' => 'nameOfAttribute',
 //
-//			'format' => '(choose 1: email, url, password,
+//			'format' => '(choose 1: none, email, url, password,
 //							 string, exists, enum, text, id, token, superToken, ipAddress, date, time, dataTime)',
 //
 //			'nullable' => false,
@@ -36,6 +36,10 @@ class Auth extends Model{
 //			'unique' => true,
 //
 //          'exists' => null,
+
+//          'identifier' => false,
+//
+//          'key' => false,
 //
 //			'enumValues' => [
 //				'item1',
@@ -56,6 +60,10 @@ class Auth extends Model{
 
             'exists' => '\App\UserDirectory\User',
 
+            'identifier' => false,
+
+            'key' => false,
+
 			'enumValues' => [
 				'item1',
 				'item2',
@@ -75,6 +83,11 @@ class Auth extends Model{
 
             'exists' => null,
 
+            'identifier' => false,
+
+            'key' => false,
+
+
 
         ],
 
@@ -90,6 +103,9 @@ class Auth extends Model{
 
             'exists' => null,
 
+            'identifier' => true,
+
+            'key' => false,
 
         ],
 
@@ -105,6 +121,10 @@ class Auth extends Model{
 
             'exists' => null,
 
+            'identifier' => false,
+
+            'key' => false,
+
 
         ],
 
@@ -112,13 +132,17 @@ class Auth extends Model{
 
             'name' => 'hashSecret',
 
-            'format' => 'superToken',
+            'format' => 'none',
 
             'nullable' => false,
 
             'unique' => true,
 
             'exists' => null,
+
+            'identifier' => false,
+
+            'key' => true,
 
 
         ],

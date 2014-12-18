@@ -61,6 +61,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 //
 //			'exists' => null,
 //
+//          'identifier' => false,
+//
+//          'key' => false,
+//
+//
 //			'enumValues' => [
 //				'item1',
 //				'item2',
@@ -80,6 +85,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 			'exists' => null,
 
+			'identifier' => true,
+
+			'key' => false,
+
 			'enumValues' => [
 
 			]
@@ -95,6 +104,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			'unique' => false,
 
 			'exists' => null,
+
+			'identifier' => false,
+
+			'key' => true,
 
 			'enumValues' => [
 
@@ -133,6 +146,26 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function getClassName()
 	{
 		return '\\'. get_class($this);
+	}
+
+
+	/**
+	 * Returns the name of Attribute where the specified setting is set, otherwise error message is thrown.
+	 * @param $settingName
+	 * @return string
+     */
+	public function getAttributeWithSetting($settingName)
+	{
+		$answer = 'No setting by that name, has it been set?';
+		$indefiniteBlock = 12;
+
+		for($x = 0; $answer == 'No setting by that name, has it been set?' || $x > $indefiniteBlock; $x++)
+		{
+			(!$this->getAttributes()[$x][$settingName])
+				?
+				:$answer = $this->getAttributes()[$x]['name'];
+		}
+		return $answer;
 	}
 
 

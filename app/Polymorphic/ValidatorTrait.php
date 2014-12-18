@@ -194,7 +194,7 @@ trait ValidatorTrait {
      * @param array $modelAttributes
      * @return bool
      */
-    public function checkMostFormatsAreValid($credentialsToCheck = array(), $modelAttributes = array())
+    public function checkMajorFormatsAreValid($credentialsToCheck = array(), $modelAttributes = array())
     {
         $falseCounter = 0;
         $formatCheck = $this->getModelAttributeConfiguration($modelAttributes, 'format');

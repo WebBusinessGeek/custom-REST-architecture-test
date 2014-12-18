@@ -35,15 +35,9 @@ class WelcomeController extends Controller
 	 */
 	public function index()
 	{
-//		return view('welcome');
-//
-//		$auth = new Auth();
-//		$user = new User();
-//		$trait = new TraitConcrete();
-//
-//		$config = $trait->getModelAttributeConfiguration($auth->getAttributes(), 'format');
-//		dd($config);
+		return view('welcome');
 
+//		dd(User::where('email', '=', 'gerlach.hector@hotmail.com')->first());
 
 	}
 

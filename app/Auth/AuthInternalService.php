@@ -32,11 +32,7 @@ class AuthInternalService extends InternalService {
             //check formats are valid
                 //existsIsValid method - done
                 //ipAddressIsValid method- done
-                //tokenIsValid method- NEXT
-                //dateIsValid method- not done
-                //timeIsValid method- not done
-                //dateTimeIsValid method- not done
-            //avoid duplication of unique data
+            //avoid duplication of unique data - done
 
         //check if credentials correct - store response (should receive a user if it is) - not done
 

@@ -16,15 +16,26 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TraitConcrete {
 
-    use AuthorizationTrait, AuthorizationTrait,
+    use AuthorizationTrait, AuthenticationTrait,
          RepositoryTrait, ResponderTrait, ValidatorTrait;
 
 
 
-    //tokenIsValid method- WORKING
-    //dateIsValid method- not done
-    //timeIsValid method- not done
-    //dateTimeIsValid method- not done
+
+    //checkNicheFormatsAreValid - not done
+
+
+    public function getModelKey()
+    {
+
+    }
+
+    public function getModelIdentifier()
+    {
+
+    }
+
+
 
 
 

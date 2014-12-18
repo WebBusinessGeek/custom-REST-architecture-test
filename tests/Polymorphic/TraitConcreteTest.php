@@ -486,12 +486,12 @@ class TraitConcreteTest extends \TestCase {
         ];
 
         //call checkAllFormatsAreValid method on good creds and assert true
-        $this->assertTrue($trait->checkMostFormatsAreValid($good1, $modelAttributesMock));
-        $this->assertTrue($trait->checkMostFormatsAreValid($good2, $modelAttributesMock));
+        $this->assertTrue($trait->checkMajorFormatsAreValid($good1, $modelAttributesMock));
+        $this->assertTrue($trait->checkMajorFormatsAreValid($good2, $modelAttributesMock));
 
         //call checkAllFormatsAreValid method on bad creds and assert false
-        $this->assertFalse($trait->checkMostFormatsAreValid($bad1, $modelAttributesMock));
-        $this->assertFalse($trait->checkMostFormatsAreValid($bad2, $modelAttributesMock));
+        $this->assertFalse($trait->checkMajorFormatsAreValid($bad1, $modelAttributesMock));
+        $this->assertFalse($trait->checkMajorFormatsAreValid($bad2, $modelAttributesMock));
 
     }
 
@@ -937,6 +937,43 @@ class TraitConcreteTest extends \TestCase {
             $this->assertFalse($trait->ipAddressIsValid($testIp));
         }
 
+    }
+
+
+    /**
+     *Test method returns true if correct credentials used, otherwise false.
+     */
+    public function test_authenticationTrait_confirmLoginCredentials_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //create and store user
+        $userId = User::create([
+            'email' => 'authenticationTrait@confirmLoginCredentialsMethodTest.com',
+            'password' => password_hash('testtest123456', PASSWORD_DEFAULT)
+        ])->id;
+
+        //confirm user is in database
+        $userFromDB = User::find($userId);
+        $this->assertEquals('authenticationTrait@confirmLoginCredentialsMethodTest.com', $userFromDB->email);
+
+
+        $userNameSpace = new User();
+        //call confirmLoginCredentials on valid credentials and assert True
+        $goodResponse = $trait->confirmLoginCredentials('testtest123456', 'authenticationTrait@confirmLoginCredentialsMethodTest.com',
+                                        'password', 'email', $userNameSpace->getClassName());
+
+        $this->assertTrue($goodResponse);
+
+        //call confirmLoginCredentials on invalid password and assert False.
+        $badResponse = $trait->confirmLoginCredentials('testtest1234', 'authenticationTrait@confirmLoginCredentialsMethodTest.com',
+            'password', 'email', $userNameSpace->getClassName());
+
+        $this->assertFalse($badResponse);
+
+        //delete user
+        User::destroy($userId);
     }
 
 }
