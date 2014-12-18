@@ -960,7 +960,7 @@ class TraitConcreteTest extends \TestCase {
 
 
         $userNameSpace = new User();
-        //call confirmLoginCredentials on valid credentials and assert True
+        //call confirmLoginCredentials on valid credentials and assert instance returned.
         $goodResponse = $trait->confirmLoginCredentials('testtest123456', 'authenticationTrait@confirmLoginCredentialsMethodTest.com',
                                         'password', 'email', $userNameSpace->getClassName());
 
@@ -975,5 +975,36 @@ class TraitConcreteTest extends \TestCase {
         //delete user
         User::destroy($userId);
     }
+
+    /**
+     *Test functions returns true if passed in secret is correct.
+     */
+    public function test_authenticationTrait_secretHashVerify_method()
+    {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //create a secret hash
+        $secret = 'authenticationTrait@secretHashVerifyMethodTest';
+        $delimiter = '$rrbb';
+        $hashSecret = $trait->createSecretHash($delimiter, $secret);
+
+        //call secretHashVerify on correct credentials and assert true
+        $this->assertTrue($trait->secretHash_verify($secret, $hashSecret, $delimiter));
+
+        //call secretHashVerify on incorrect credentials and assert false.
+        $this->assertFalse($trait->secretHash_verify('notCorrect', $hashSecret, $delimiter));
+    }
+
+
+    /**
+     *Test method returns equal to now +  $x hours.
+     */
+    public function test_authenticationTrait_createLoginExpeirationDate_method()
+    {
+
+    }
+
+
 
 }

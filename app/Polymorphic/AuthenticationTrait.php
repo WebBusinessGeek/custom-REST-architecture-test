@@ -27,4 +27,57 @@ trait AuthenticationTrait {
         return (password_verify($keyValue, $user->$keyName))? $user : false;
     }
 
+
+    /**
+     * Generates a public key after authenticating.
+     * @return string
+     */
+    public function createPublicToken()
+    {
+        return uniqid('publicKey', true);
+    }
+
+
+    /**
+     * Returns a secret hash of the parameters specified.
+     * Delimiter is for splitting the string during the hash verify process.
+     * @param $delimiter
+     * @param $para1
+     * @param null $para2
+     * @param null $para3
+     * @param null $para4
+     * @return string
+     */
+    public function createSecretHash($delimiter, $para1, $para2 = null, $para3 = null, $para4 = null)
+    {
+        $passwordHashed = password_hash($para1.$para2.$para3.$para4, PASSWORD_DEFAULT);
+
+        $tokenHashed = uniqid('secretKey_$krx2342387edw').$delimiter.$passwordHashed.$delimiter.mt_rand();
+
+        return $tokenHashed;
+    }
+
+    /**
+     * Returns true if secret passed in is valid, otherwise false.
+     * @param $secret
+     * @param $secretHash
+     * @param $delimiter
+     * @return bool
+     */
+    public function secretHash_verify($secret, $secretHash, $delimiter)
+    {
+        $explodedHash = explode($delimiter, $secretHash);
+        return password_verify($secret, $explodedHash[1]);
+    }
+
+
+    /**
+     * NoTEST!!
+     * @param $expireRate
+     * @return \DateTime
+     */
+    public function createLoginExpirationDate($expireRate)
+    {
+        return new \DateTime("+{$expireRate} hours");
+    }
 }

@@ -9,8 +9,7 @@
 namespace App\Base;
 
 
-use App\Polymorphic\FactoryTrait;
-use App\Polymorphic\InvokerTrait;
+
 use App\Polymorphic\RepositoryTrait;
 use App\Polymorphic\ResponderTrait;
 use App\Polymorphic\ValidatorTrait;
@@ -89,6 +88,24 @@ abstract class InternalService {
     public function isModelInstance($potentialModel)
     {
         return (is_object($potentialModel) && '\\'. get_class($potentialModel) == $this->getModelClassName());
+    }
+
+
+    public function getModelAttributeWithSetting($settingName)
+    {
+        return $this->model->getAttributeWithSetting($settingName);
+    }
+
+
+    public function getModelDelimiter()
+    {
+        return $this->model->getDelimiter;
+    }
+
+
+    public function getModelLoginExpiration()
+    {
+        return $this->model->getLoginExpiration();
     }
 
 }

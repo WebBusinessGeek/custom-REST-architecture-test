@@ -19,6 +19,10 @@ class Auth extends Model{
     //NEED TO REFACTOR THESE INTO  THEIR OWN CLASS FOR EASY EXTENSION
 
 
+    protected $delimiter = '$kr.';
+
+    protected $loginExpiration = 2;
+
     /**
      * Stores models attributes and their configuration values
      * @var array
@@ -174,6 +178,36 @@ class Auth extends Model{
     public function getClassName()
     {
         return '\\'. get_class($this);
+    }
+
+
+    /**
+     * Returns the name of Attribute where the specified setting is set, otherwise error message is thrown.
+     * @param $settingName
+     * @return string
+     */
+    public function getAttributeWithSetting($settingName)
+    {
+        $answer = 'No setting by that name, has it been set?';
+        $indefiniteBlock = 12;
+
+        for($x = 0; $answer == 'No setting by that name, has it been set?' || $x > $indefiniteBlock; $x++)
+        {
+            (!$this->getAttributes()[$x][$settingName])
+                ?
+                :$answer = $this->getAttributes()[$x]['name'];
+        }
+        return $answer;
+    }
+
+    public function getDelimiter()
+    {
+        return $this->delimiter;
+    }
+
+    public function getLoginExpiration()
+    {
+        return $this->loginExpiration;
     }
 
 

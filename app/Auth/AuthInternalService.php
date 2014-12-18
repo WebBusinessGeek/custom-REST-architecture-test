@@ -10,8 +10,11 @@ namespace App\Auth;
 
 
 use App\Base\InternalService;
+use App\Polymorphic\AuthenticationTrait;
 
 class AuthInternalService extends InternalService {
+
+    use AuthenticationTrait;
 
     public function __construct()
     {
@@ -26,26 +29,52 @@ class AuthInternalService extends InternalService {
 
     public function store($credentialsOrAttributes = [])
     {
-        //run following checks on attributes
-            //model accepts attributes - done
-            //model non nullable attributes set - done
-            //check formats are valid
-                //existsIsValid method - done
-            //avoid duplication of unique data - done
+        if ($this->modelAcceptsAttributes($credentialsOrAttributes, $this->getModelAttributes())&&
+            $this->modelNonNullableAttributesSet($credentialsOrAttributes, $this->getModelAttributes())&&
+            $this->checkMajorFormatsAreValid($credentialsOrAttributes, $this->getModelAttributes())&&
+            $this->existsIsValid($credentialsOrAttributes, $this->getModelAttributes())&&
+            $this->avoidDuplicationOfUniqueData($credentialsOrAttributes, $credentialsOrAttributes, $this->getModelClassName()))
+        {
+            //check and store user if credentials correct - done
+            $key = $this->getModelAttributeWithSetting('key');
+            $identifier = $this->getModelAttributeWithSetting('identifier');
+            $potentialUser = $this->confirmLoginCredentials($credentialsOrAttributes[$key],
+                $credentialsOrAttributes[$identifier],
+                $key, $identifier, $this->getModelClassName());
 
-        //check and store user if credentials correct - done
-
-        //if correct
-            // create public token - not Done
-            // create expiration date - not Done
-            // make hashSecret with (user_id, token, ipAddress) - not Done
+            //if correct
+            // create public token - done
+            // create expiration date - done
+            // make hashSecret with (user_id, token, ipAddress) - done
             // add all attributes to new model - done
             // store model - done
             // return model - done
-        //if incorrect
+
+            if ($this->isModelInstance($potentialUser))
+            {
+                $token = $this->createPublicToken();
+                $userId = $potentialUser->id;
+                $ipAddress = $credentialsOrAttributes['ipAddress'];
+                $hashSecret = $this->createSecretHash($this->getModelDelimiter(), $token, $userId, $ipAddress);
+                $expDate = $this->createLoginExpirationDate($this->getModelLoginExpiration());
+
+                $attr = [
+                    'token' => $token,
+                    'userId' => $userId,
+                    'ipAddress' => $ipAddress,
+                    'hashSecret' => $hashSecret,
+                    'expiresOn' => $expDate
+                ];
+
+                return $this->storeEloquentModelInDatabase($this->addAttributesToNewModel($attr, $this->getModelClassName()));
+            }
+
+            //if incorrect
             // return error message - done
+//            return $this->sendMessage('Invalid credentials.');
 
-
+        }
+        return $this->sendMessage('Invalid Credentials');
     }
 
     public function show($model_id)
