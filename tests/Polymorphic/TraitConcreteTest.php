@@ -941,7 +941,7 @@ class TraitConcreteTest extends \TestCase {
 
 
     /**
-     *Test method returns true if correct credentials used, otherwise false.
+     *Test method returns Model instance if correct credentials used, otherwise false.
      */
     public function test_authenticationTrait_confirmLoginCredentials_method()
     {
@@ -964,7 +964,7 @@ class TraitConcreteTest extends \TestCase {
         $goodResponse = $trait->confirmLoginCredentials('testtest123456', 'authenticationTrait@confirmLoginCredentialsMethodTest.com',
                                         'password', 'email', $userNameSpace->getClassName());
 
-        $this->assertTrue($goodResponse);
+        $this->assertTrue('\\'.get_class($goodResponse) == $userNameSpace->getClassName());
 
         //call confirmLoginCredentials on invalid password and assert False.
         $badResponse = $trait->confirmLoginCredentials('testtest1234', 'authenticationTrait@confirmLoginCredentialsMethodTest.com',

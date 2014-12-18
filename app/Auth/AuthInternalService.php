@@ -31,16 +31,17 @@ class AuthInternalService extends InternalService {
             //model non nullable attributes set - done
             //check formats are valid
                 //existsIsValid method - done
-                //ipAddressIsValid method- done
             //avoid duplication of unique data - done
 
-        //check if credentials correct - store response (should receive a user if it is) - not done
+        //check and store user if credentials correct - done
 
         //if correct
-            // create auth token using attribute values and push it to attributes ALONG WITH USER ID!!
-            // add attributes to new model - done
+            // create public token - not Done
+            // create expiration date - not Done
+            // make hashSecret with (user_id, token, ipAddress) - not Done
+            // add all attributes to new model - done
             // store model - done
-            // return model
+            // return model - done
         //if incorrect
             // return error message - done
 

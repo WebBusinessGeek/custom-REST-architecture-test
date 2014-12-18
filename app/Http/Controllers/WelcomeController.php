@@ -35,9 +35,26 @@ class WelcomeController extends Controller
 	 */
 	public function index()
 	{
-		return view('welcome');
+//		return view('welcome');
 
-//		dd(User::where('email', '=', 'gerlach.hector@hotmail.com')->first());
+
+		$trait = new TraitConcrete();
+
+		$tokenHashed = $trait->createSecretHash('kevinman', 'kevinman');
+
+//		dd(password_hash('kev', PASSWORD_DEFAULT));
+
+		$exploded = explode('$k./', $tokenHashed);
+		$first60 = substr($exploded[1], 13, 60);
+		$response = password_verify('kevinmankevinman',$first60);
+		return $tokenHashed. var_dump($exploded).var_dump($first60). var_dump($response);
+
+
+
+//		dd($exploded);
+
+
+
 
 	}
 

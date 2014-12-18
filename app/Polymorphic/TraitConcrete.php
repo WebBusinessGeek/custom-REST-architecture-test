@@ -22,18 +22,25 @@ class TraitConcrete {
 
 
 
-    //checkNicheFormatsAreValid - not done
-
-
-    public function getModelKey()
+    public function createPublicToken()
     {
 
     }
 
-    public function getModelIdentifier()
+    public function createSecretHash($para1, $para2 = null, $para3 = null, $para4 = null)
     {
+        $passwordHashed = password_hash($para1.$para2.$para3.$para4, PASSWORD_DEFAULT);
 
+        $tokenHashed = uniqid('secretKey'. '_$krx2342387edw'. '$k./').$passwordHashed.'$k./'.mt_rand();
+
+        return $tokenHashed;
     }
+
+    public function createHash($para)
+    {
+        return password_hash($para, PASSWORD_DEFAULT);
+    }
+
 
 
 
