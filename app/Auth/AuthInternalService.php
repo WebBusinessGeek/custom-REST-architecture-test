@@ -67,9 +67,15 @@ class AuthInternalService extends InternalService {
         return $this->sendMessage('Invalid credentials.');
     }
 
+
+    /**
+     * Returns instance specified from auths table if it exists, otherwise returns an error message.
+     * @param $model_id
+     * @return string
+     */
     public function show($model_id)
     {
-        // TODO: Implement show() method.
+        return $this->getEloquentModelFromDatabase($model_id, $this->getModelClassName());
     }
 
     public function update($model_id, $attributes = array())

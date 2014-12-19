@@ -102,4 +102,57 @@ class AuthInternalServiceTest extends \TestCase {
 
     }
 
+
+    /**
+     *Test method returns specified instance. Otherwise returns an error.
+     */
+    public function test_authInternalService_show_method()
+    {
+        //authService instance
+        $authService = new AuthInternalService();
+
+        //create dummy user and auth and store in DB
+
+        $user = User::create([
+            'email' => 'authInternalService@showMethodTest.com',
+            'password' => 'testtest123456'
+        ]);
+
+        $userId = $user->id;
+        $ipAddress = '192.88.99.3';
+        $publicToken = $authService->createPublicToken();
+        $expireRate = 2;
+        $expiresOn = $authService->createLoginExpirationDate($expireRate);
+        $hashSecret = $authService->createSecretHash($authService->getModelDelimiter(),
+                        $publicToken,$userId,$ipAddress);
+
+        $auth = Auth::create([
+            'userId' => $userId,
+            'ipAddress' => $ipAddress,
+            'publicToken' => $publicToken,
+            'expiresOn' => $expiresOn,
+            'hashSecret' => $hashSecret
+        ]);
+
+        $authId = $auth->id;
+
+        //assert its indeed in the database
+        $authFromDBPreTest = Auth::find($authId);
+        $this->assertEquals($ipAddress, $authFromDBPreTest->ipAddress);
+        $this->assertEquals($publicToken, $authFromDBPreTest->publicToken);
+
+        //call show method and assert its attributes
+        $authFromDB = $authService->show($authId);
+        $this->assertEquals($ipAddress, $authFromDB->ipAddress);
+        $this->assertEquals($publicToken, $authFromDB->publicToken);
+
+        //delete instance from database
+        Auth::destroy($authId);
+        User::destroy($userId);
+
+        //call show on bad id and assert error message
+        $error = $authService->show('aaa');
+        $this->assertEquals('Model not found.', $error);
+    }
+
 }
