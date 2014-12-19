@@ -13,7 +13,7 @@ use App\Base\InternalService;
 use Illuminate\Pagination\PaginationServiceProvider;
 use Illuminate\Pagination\Paginator;
 
-class UserInternalService extends InternalService {
+class UserInternalService extends InternalService implements UserInternalServiceInterface {
 
 
     public function __construct()

@@ -11,4 +11,14 @@ namespace App\UserDirectory;
 
 interface UserInternalServiceInterface {
 
+
+    public function store($credentialsOrAttributes =[]);
+
+    public function show($model_id);
+
+    public function update($model_id, $attributes = array());
+
+    public function destroy($model_id);
+
+
 }

@@ -11,4 +11,10 @@ namespace App\Auth;
 
 interface AuthInternalServiceInterface {
 
+    public function store($credentialsOrAttributes = []);
+
+    public function show($model_id);
+
+    public function destroy($model_id);
+
 }

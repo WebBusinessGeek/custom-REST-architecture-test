@@ -13,7 +13,7 @@ use App\Base\InternalService;
 use App\Polymorphic\AuthenticationTrait;
 use App\UserDirectory\User;
 
-class AuthInternalService extends InternalService {
+class AuthInternalService extends InternalService implements AuthInternalServiceInterface {
 
     use AuthenticationTrait;
 

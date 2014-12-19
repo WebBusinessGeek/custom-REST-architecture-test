@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="89654f89-71df-4433-8b85-4d76f96543b5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Auth/AuthInternalService.php" afterPath="$PROJECT_DIR$/app/Auth/AuthInternalService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Auth/AuthInternalServiceTest.php" afterPath="$PROJECT_DIR$/tests/Auth/AuthInternalServiceTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Polymorphic/RepositoryTrait.php" afterPath="$PROJECT_DIR$/app/Polymorphic/RepositoryTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Auth/AuthInternalServiceInterface.php" afterPath="$PROJECT_DIR$/app/Auth/AuthInternalServiceInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/UserDirectory/UserInternalService.php" afterPath="$PROJECT_DIR$/app/UserDirectory/UserInternalService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/UserDirectory/UserInternalServiceInterface.php" afterPath="$PROJECT_DIR$/app/UserDirectory/UserInternalServiceInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="restArchitectureTest.iws" />
@@ -33,11 +33,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="AuthInternalServiceTest.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tests/Auth/AuthInternalServiceTest.php">
+          <file leaf-file-name="UserInternalService.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.07913669" vertical-offset="4280" max-vertical-offset="5150">
-                  <caret line="177" column="24" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
+                <state vertical-scroll-proportion="2.4100718" vertical-offset="0" max-vertical-offset="2300">
+                  <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -47,11 +47,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="WelcomeController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
+          <file leaf-file-name="UserInternalServiceInterface.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalServiceInterface.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.78417265" vertical-offset="480" max-vertical-offset="1175">
-                  <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.64748204" vertical-offset="0" max-vertical-offset="695">
+                  <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -281,15 +281,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -324,13 +324,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39889196" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39889196" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -447,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalServiceInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="722">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserExternalService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.107913665" vertical-offset="0" max-vertical-offset="695">
@@ -552,13 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Auth/AuthInternalServiceInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2877698" vertical-offset="0" max-vertical-offset="695">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Auth/AuthExternalService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39568347" vertical-offset="0" max-vertical-offset="1075">
@@ -591,13 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50359714" vertical-offset="0" max-vertical-offset="975">
           <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6978416" vertical-offset="0" max-vertical-offset="2300">
-          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -649,7 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34532374" vertical-offset="1260" max-vertical-offset="2375">
           <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,19 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75107914" vertical-offset="878" max-vertical-offset="1600">
           <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <marker date="1419012147000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1419012147000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder=" Stores Eloquent models in their respective database table and returns the stored instance. ..." />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder=" Returns model specified, otherwise throws an error. Will cause FATAL ERROR if class name cannot be found. ..." />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder=" Deletes Model passed in. Returns true if Model was deleted. ..." />
-            <marker date="1419012147000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -715,60 +680,108 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64028776" vertical-offset="1080" max-vertical-offset="3275">
           <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
-          <folding>
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012199000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Auth/AuthInternalService.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6791367" vertical-offset="1703" max-vertical-offset="2475">
-          <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.64748204" vertical-offset="0" max-vertical-offset="1175">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding>
-            <marker date="1419012263000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1419012263000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder=" Stores a new auth session Model if credentials passed are valid, otherwise returns error message. ..." />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder=" Returns instance specified from auths table if it exists, otherwise returns an error message. ..." />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder=" Deletes specified auth instance from database if it exists. ..." />
-            <marker date="1419012263000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419012172000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1419012172000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419012172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419012172000" expanded="true" signature="-1:-1" placeholder=" Create a new controller instance. ..." />
+            <marker date="1419012172000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419012172000" expanded="true" signature="-1:-1" placeholder=" Show the application welcome screen to the user. ..." />
+            <marker date="1419012172000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Auth/AuthInternalServiceTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.07913669" vertical-offset="4280" max-vertical-offset="5150">
-          <caret line="177" column="24" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.4676259" vertical-offset="0" max-vertical-offset="5150">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding>
+            <marker date="1419011840000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1419011840000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="Test method stores a new auth if credentials are verified, otherwise error message. ..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="Test method returns specified instance. Otherwise returns an error. ..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="Test method deletes specified instance from auths table in database if it exists. ..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419011840000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Auth/AuthInternalService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.676259" vertical-offset="830" max-vertical-offset="2475">
+          <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+          <folding>
+            <marker date="1419015610000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1419015610000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder=" Stores a new auth session Model if credentials passed are valid, otherwise returns error message. ..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder=" Returns instance specified from auths table if it exists, otherwise returns an error message. ..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder=" Deletes specified auth instance from database if it exists. ..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Auth/AuthInternalServiceInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50359714" vertical-offset="0" max-vertical-offset="695">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <marker date="1419015610000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1419015610000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalServiceInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64748204" vertical-offset="0" max-vertical-offset="695">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
+    <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserInternalService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78417265" vertical-offset="480" max-vertical-offset="1175">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.4100718" vertical-offset="0" max-vertical-offset="2300">
+          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
           <folding />
         </state>
       </provider>
