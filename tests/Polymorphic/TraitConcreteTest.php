@@ -1000,8 +1000,20 @@ class TraitConcreteTest extends \TestCase {
     /**
      *Test method returns equal to now +  $x hours.
      */
-    public function test_authenticationTrait_createLoginExpeirationDate_method()
+    public function test_authenticationTrait_createLoginExpirationDate_method()
     {
+        //trait instance
+        $trait = new TraitConcrete();
+
+        //date with current time
+        $currentTime = new DateTime();
+
+        //call createLoginExpirationDate and store in variable
+        $hoursAhead = '3';
+        $newTime = $trait->createLoginExpirationDate($hoursAhead);
+
+        //assert createLoginExpirationDate is $hourAhead more than current time
+        $this->assertEquals($hoursAhead, $currentTime->diff($newTime)->h);
 
     }
 

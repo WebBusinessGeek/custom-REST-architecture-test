@@ -72,7 +72,7 @@ trait AuthenticationTrait {
 
 
     /**
-     * NoTEST!!
+     * Returns a DateTime object equal to $expireRate hours more than the current time. 
      * @param $expireRate
      * @return \DateTime
      */
