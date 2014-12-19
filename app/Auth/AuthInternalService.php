@@ -11,6 +11,7 @@ namespace App\Auth;
 
 use App\Base\InternalService;
 use App\Polymorphic\AuthenticationTrait;
+use App\UserDirectory\User;
 
 class AuthInternalService extends InternalService {
 
@@ -27,54 +28,43 @@ class AuthInternalService extends InternalService {
         // TODO: Implement index() method.
     }
 
+    /**
+     * Stores a new auth session Model if credentials passed are valid, otherwise returns error message.
+     * @param array $credentialsOrAttributes
+     * @return \Illuminate\Database\Eloquent\Model|mixed
+     */
     public function store($credentialsOrAttributes = [])
     {
-        if ($this->modelAcceptsAttributes($credentialsOrAttributes, $this->getModelAttributes())&&
-            $this->modelNonNullableAttributesSet($credentialsOrAttributes, $this->getModelAttributes())&&
-            $this->checkMajorFormatsAreValid($credentialsOrAttributes, $this->getModelAttributes())&&
-            $this->existsIsValid($credentialsOrAttributes, $this->getModelAttributes())&&
-            $this->avoidDuplicationOfUniqueData($credentialsOrAttributes, $credentialsOrAttributes, $this->getModelClassName()))
+        $userNameSpace = new User();
+        $userClassName  = $userNameSpace->getClassName();
+
+        $key = $this->getSpecificModelAttributeWithSetting('key', $userClassName);
+
+        $identifier = $this->getSpecificModelAttributeWithSetting('identifier', $userClassName);
+
+        $potentialUser = $this->confirmLoginCredentials($credentialsOrAttributes[$key],
+            $credentialsOrAttributes[$identifier],
+            $key, $identifier, $userClassName);
+
+        if ($this->isSpecificModelInstance($potentialUser, $userClassName))
         {
-            //check and store user if credentials correct - done
-            $key = $this->getModelAttributeWithSetting('key');
-            $identifier = $this->getModelAttributeWithSetting('identifier');
-            $potentialUser = $this->confirmLoginCredentials($credentialsOrAttributes[$key],
-                $credentialsOrAttributes[$identifier],
-                $key, $identifier, $this->getModelClassName());
+            $token = $this->createPublicToken();
+            $userId = $potentialUser->id;
+            $ipAddress = $credentialsOrAttributes['ipAddress'];
+            $hashSecret = $this->createSecretHash($this->getModelDelimiter(), $token, $userId, $ipAddress);
+            $expDate = $this->createLoginExpirationDate($this->getModelLoginExpiration());
 
-            //if correct
-            // create public token - done
-            // create expiration date - done
-            // make hashSecret with (user_id, token, ipAddress) - done
-            // add all attributes to new model - done
-            // store model - done
-            // return model - done
+            $attr = [
+                'publicToken' => $token,
+                'userId' => $userId,
+                'ipAddress' => $ipAddress,
+                'hashSecret' => $hashSecret,
+                'expiresOn' => $expDate
+            ];
 
-            if ($this->isModelInstance($potentialUser))
-            {
-                $token = $this->createPublicToken();
-                $userId = $potentialUser->id;
-                $ipAddress = $credentialsOrAttributes['ipAddress'];
-                $hashSecret = $this->createSecretHash($this->getModelDelimiter(), $token, $userId, $ipAddress);
-                $expDate = $this->createLoginExpirationDate($this->getModelLoginExpiration());
-
-                $attr = [
-                    'token' => $token,
-                    'userId' => $userId,
-                    'ipAddress' => $ipAddress,
-                    'hashSecret' => $hashSecret,
-                    'expiresOn' => $expDate
-                ];
-
-                return $this->storeEloquentModelInDatabase($this->addAttributesToNewModel($attr, $this->getModelClassName()));
-            }
-
-            //if incorrect
-            // return error message - done
-//            return $this->sendMessage('Invalid credentials.');
-
+            return $this->storeEloquentModelInDatabase($this->addAttributesToNewModel($attr, $this->getModelClassName()));
         }
-        return $this->sendMessage('Invalid Credentials');
+        return $this->sendMessage('Invalid credentials.');
     }
 
     public function show($model_id)

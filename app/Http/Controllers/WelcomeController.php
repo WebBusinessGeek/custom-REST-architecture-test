@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Auth\Auth;
+use App\Auth\AuthInternalService;
 use App\Polymorphic\TraitConcrete;
 use App\UserDirectory\User;
 use Faker\Provider\DateTime;
@@ -37,6 +38,7 @@ class WelcomeController extends Controller
 	public function index()
 	{
 		return view('welcome');
+
 
 
 	}

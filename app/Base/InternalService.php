@@ -13,6 +13,7 @@ namespace App\Base;
 use App\Polymorphic\RepositoryTrait;
 use App\Polymorphic\ResponderTrait;
 use App\Polymorphic\ValidatorTrait;
+use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 abstract class InternalService {
@@ -90,16 +91,28 @@ abstract class InternalService {
         return (is_object($potentialModel) && '\\'. get_class($potentialModel) == $this->getModelClassName());
     }
 
+    public function isSpecificModelInstance($potentialModel, $modelClassName)
+    {
+        return (is_object($potentialModel) && '\\'. get_class($potentialModel) == $modelClassName);
+
+    }
+
 
     public function getModelAttributeWithSetting($settingName)
     {
         return $this->model->getAttributeWithSetting($settingName);
     }
 
+    public function getSpecificModelAttributeWithSetting($settingName, $modelClassName)
+    {
+        $model = $this->createNewModel($modelClassName);
+        return $model->getAttributeWithSetting($settingName);
+    }
+
 
     public function getModelDelimiter()
     {
-        return $this->model->getDelimiter;
+        return $this->model->getDelimiter();
     }
 
 
@@ -107,5 +120,9 @@ abstract class InternalService {
     {
         return $this->model->getLoginExpiration();
     }
+
+
+
+
 
 }
