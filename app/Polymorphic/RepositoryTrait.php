@@ -54,7 +54,7 @@ trait RepositoryTrait {
      */
     public function deleteEloquentModelFromDatabase(Model $model, $className)
     {
-        return $className::destroy($model->id);
+        return ($className::destroy($model->id))? true :false;
     }
 
 

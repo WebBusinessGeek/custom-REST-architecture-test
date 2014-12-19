@@ -83,9 +83,18 @@ class AuthInternalService extends InternalService {
         // TODO: Implement update() method.
     }
 
+    /**
+     * Deletes specified auth instance from database if it exists.
+     * Otherwise returns an error message.
+     * @param $model_id
+     * @return mixed|string
+     */
     public function destroy($model_id)
     {
-        // TODO: Implement destroy() method.
+        $instance = $this->show($model_id);
+        return($this->isModelInstance($instance))
+            ? $this->deleteEloquentModelFromDatabase($instance, $this->getModelClassName())
+            : $instance;
     }
 
 

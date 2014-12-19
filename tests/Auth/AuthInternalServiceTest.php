@@ -155,4 +155,54 @@ class AuthInternalServiceTest extends \TestCase {
         $this->assertEquals('Model not found.', $error);
     }
 
+
+    /**
+     *Test method deletes specified instance from auths table in database if it exists.
+     * Otherwise return an error message
+     */
+    public function test_authInternalService_destroy_method()
+    {
+        //authService instance
+        $authService = new AuthInternalService();
+
+        //create a dummy user and auth
+
+        $user = User::create([
+            'email' => 'authInternalService@destroyMethodTest.com',
+            'password' => 'testtest123456'
+        ]);
+
+        $userId = $user->id;
+        $ipAddress = '192.88.99.3';
+        $publicToken = $authService->createPublicToken();
+        $expireRate = 2;
+        $expiresOn = $authService->createLoginExpirationDate($expireRate);
+        $hashSecret = $authService->createSecretHash($authService->getModelDelimiter(),
+            $publicToken,$userId,$ipAddress);
+
+        $auth = Auth::create([
+            'userId' => $userId,
+            'ipAddress' => $ipAddress,
+            'publicToken' => $publicToken,
+            'expiresOn' => $expiresOn,
+            'hashSecret' => $hashSecret
+        ]);
+
+        $authId = $auth->id;
+
+        //assert auth is indeed in database
+        $authFromDB = Auth::find($authId);
+        $this->assertEquals($ipAddress, $authFromDB->ipAddress);
+        $this->assertEquals($publicToken, $authFromDB->publicToken);
+
+        //call destroy method
+        $this->assertTrue($authService->destroy($authId));
+
+        //assert its removed from database
+        $this->assertEquals('Model not found.', $authService->show($authId));
+
+        //delete dummy user
+        User::destroy($userId);
+    }
+
 }
