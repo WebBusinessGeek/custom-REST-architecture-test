@@ -18,7 +18,9 @@ abstract class ExternalService {
 
     use ResponderTrait, AuthenticationTrait, AuthorizationTrait;
 
-    public $model;
+    protected $model;
+
+    protected $internalService;
 
     abstract public function index();
 

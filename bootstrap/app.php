@@ -41,6 +41,16 @@ $app->singleton(
 	'App\Exceptions\Handler'
 );
 
+$app->bind(
+	'\App\UserDirectory\UserInternalServiceInterface',
+	'\App\UserDirectory\UserInternalService'
+	);
+
+$app->bind(
+	'\App\Auth\AuthInternalServiceInterface',
+	'\App\Auth\AuthInternalService'
+);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

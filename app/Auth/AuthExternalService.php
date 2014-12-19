@@ -10,9 +10,14 @@ namespace App\Auth;
 
 
 use App\Base\ExternalService;
+use Illuminate\Foundation\Application;
 
 class AuthExternalService extends ExternalService{
 
+    public function __construct()
+    {
+        $this->internalService = Application::getInstance()->make('\App\Auth\AuthInternalServiceInterface');
+    }
 
     public function index()
     {
