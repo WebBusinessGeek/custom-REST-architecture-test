@@ -80,4 +80,24 @@ trait AuthenticationTrait {
     {
         return new \DateTime("+{$expireRate} hours");
     }
+
+
+
+    /**
+     * Returns an array of attributes hashed where specified.
+     * @param array $credentialsOrAttributes
+     * @param array $hashAbleAttributes
+     * @return array
+     */
+    public function hashHashAbleAttributes($credentialsOrAttributes = [], $hashAbleAttributes = [])
+    {
+        foreach($credentialsOrAttributes as $key => $value)
+        {
+            if(in_array($key, $hashAbleAttributes))
+            {
+                $credentialsOrAttributes[$key] = password_hash($value, PASSWORD_DEFAULT);
+            }
+        }
+        return $credentialsOrAttributes;
+    }
 }

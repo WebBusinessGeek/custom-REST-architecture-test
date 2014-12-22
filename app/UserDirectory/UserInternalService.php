@@ -35,7 +35,8 @@ class UserInternalService extends InternalService implements UserInternalService
     public function store($credentialsOrAttributes =[])
     {
         return ($this->checkAttributes($credentialsOrAttributes))
-                ?  $this->storeEloquentModelInDatabase($this->addAttributesToNewModel($credentialsOrAttributes, $this->getModelClassName()))
+                ?  $this->storeEloquentModelInDatabase(
+                        $this->addAttributesToNewModel($credentialsOrAttributes, $this->getModelClassName()))
                 :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
     }
 
@@ -85,6 +86,19 @@ class UserInternalService extends InternalService implements UserInternalService
            $this->deleteEloquentModelFromDatabase($potentialModel, $this->getModelClassName());
         }
         return $potentialModel;
+    }
+
+    public function storeUpdated($credentialsOrAttributes =[])
+    {
+        return ($this->checkAttributes($credentialsOrAttributes))
+            ?  $this->storeEloquentModelInDatabase(
+                $this->addAttributesToNewModel(
+                    $this->hashHashAbleAttributes(
+                        $credentialsOrAttributes, $this->getModelHashAbleAttributes()
+                    ), $this->getModelClassName()
+                )
+            )
+            :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
     }
 
 

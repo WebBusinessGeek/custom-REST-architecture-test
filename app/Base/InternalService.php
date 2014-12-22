@@ -123,6 +123,11 @@ abstract class InternalService {
     }
 
 
+    public function getModelHashAbleAttributes()
+    {
+        return $this->model->getHashAbleAttributes();
+    }
+
 
 
 

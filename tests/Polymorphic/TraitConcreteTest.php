@@ -1024,18 +1024,41 @@ class TraitConcreteTest extends \TestCase {
     public function test_authenticationTrait_hashHashAbleAttributes_method()
     {
         //trait instance
+        $trait = new TraitConcrete();
 
-        //array with hashable attributes
+        //hash attributes to check for
+        $hashAttributes = [ 'password', 'token'];
 
-        //array without hashable attributes
+        //array with hashAble attributes
+        $hashAble = [
+            'email' => 'authenticationTrait@hashHashAbleAttributesMethodTest.com',
+            'password' => 'testtest123456',
+            'token' => 'someToken'
+        ];
 
-        //call hashHashAbleAttributes on array with hashable attributes and Store the response
+        //array without hashAble attributes
+        $nonHashAble = [
+            'email' => 'authenticationTrait@hashHashAbleAttributesMethodTest2.com',
+            'name' => 'someName',
+            'car' => 'someCar',
+        ];
 
-        //assert hashable attributes have been hashed using response
+        //call hashHashAbleAttributes on array with hashAble attributes and Store the response
+        $hashAbleResponse = $trait->hashHashAbleAttributes($hashAble, $hashAttributes);
 
-        //call hashHashAbleAttributes on array with NO hashable attributes and store the response
+        //assert hashAble attributes have been hashed using response
+        $this->assertTrue(password_verify('testtest123456', $hashAbleResponse['password']));
+        $this->assertTrue(password_verify('someToken', $hashAbleResponse['token']));
+        $this->assertEquals('authenticationTrait@hashHashAbleAttributesMethodTest.com', $hashAbleResponse['email']);
 
-        //assert attriubtes are the same using response
+        //call hashHashAbleAttributes on array with NO hashAble attributes and store the response
+        $nonHashAbleResponse = $trait->hashHashAbleAttributes($nonHashAble, $hashAttributes);
+
+        //assert attributes are the same using response
+        foreach($nonHashAbleResponse as $key => $value)
+        {
+            $this->assertEquals($nonHashAble[$key], $value);
+        }
     }
 
 

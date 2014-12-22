@@ -47,6 +47,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * Stores models attributes and their configuration values
 	 * @var array
 	 */
+
+	protected $hashAbleAttributes = [
+		'password',
+	];
+
 	protected $modelAttributes = [
 //		START AT ZERO (0)!!! => [
 //
@@ -168,5 +173,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $answer;
 	}
 
+	public function getHashAbleAttributes()
+	{
+		return $this->hashAbleAttributes;
+	}
 
 }

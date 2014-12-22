@@ -22,21 +22,6 @@ class TraitConcrete {
 
 
 
-    public function hashHashAbleAttributes($credentialsOrAttributes = array())
-    {
-        $hashAbleAttributes = [ 'password', ];
-
-        foreach($credentialsOrAttributes as $key => $value)
-        {
-            if(in_array($key, $hashAbleAttributes))
-            {
-                password_hash($value, PASSWORD_DEFAULT);
-                $credentialsOrAttributes[$key] = $value;
-            }
-        }
-        return $credentialsOrAttributes;
-    }
-
 
 
 
