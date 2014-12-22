@@ -46,7 +46,7 @@ class UserInternalServiceTest extends \TestCase{
         $userGood = $userService->store($good);
         $userFromDB = User::find($userGood->id);
         $this->assertTrue($userFromDB->email == 'userInternalService@storeMethodTest.com');
-        $this->assertTrue($userFromDB->password == 'testtest123456');
+        $this->assertTrue(password_verify('testtest123456', $userFromDB->password));
         $this->assertTrue($userFromDB->id == $userGood->id);
 
         //delete user
@@ -82,7 +82,7 @@ class UserInternalServiceTest extends \TestCase{
 
         //assert attributes
         $this->assertTrue($userFromDB->email == 'userInternalService@showMethodTest.com');
-        $this->assertTrue($userFromDB->password == 'testtest123456');
+        $this->assertTrue(password_verify('testtest123456', $userFromDB->password));
         $this->assertTrue($user->id == $userFromDB->id);
 
         //delete user
@@ -114,7 +114,7 @@ class UserInternalServiceTest extends \TestCase{
         //assert its stored in the database and has correct attributes using variable->id
         $userFromDB = $userService->show($newUser->id);
         $this->assertEquals('userInternalService@updateMethodTest.com', $userFromDB->email);
-        $this->assertEquals('testtest123456', $userFromDB->password);
+        $this->assertTrue(password_verify('testtest123456', $userFromDB->password));
 
         //call update method on stored instance using same variable->id and assert its changes
         $newAttr = [
@@ -124,7 +124,7 @@ class UserInternalServiceTest extends \TestCase{
 
         $updatedUser = $userService->update($newUser->id, $newAttr);
         $this->assertEquals('userInternalService@updateMethodTest2.com', $updatedUser->email);
-        $this->assertEquals('testtest654321', $updatedUser->password);
+        $this->assertTrue(password_verify('testtest654321', $updatedUser->password));
 
         //delete instance from database
         User::destroy($newUser->id);
@@ -153,7 +153,7 @@ class UserInternalServiceTest extends \TestCase{
         //assert that its indeed store in the database using variable->id
         $userFromDB = $userService->show($newUser->id);
         $this->assertEquals('userInternalService@destroyMethodTest.com', $userFromDB->email);
-        $this->assertEquals('testtest123456', $userFromDB->password);
+        $this->assertTrue(password_verify('testtest123456', $userFromDB->password));
         $this->assertEquals($newUser->id, $userFromDB->id);
 
         //call destroy method on instance

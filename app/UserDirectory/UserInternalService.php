@@ -35,9 +35,14 @@ class UserInternalService extends InternalService implements UserInternalService
     public function store($credentialsOrAttributes =[])
     {
         return ($this->checkAttributes($credentialsOrAttributes))
-                ?  $this->storeEloquentModelInDatabase(
-                        $this->addAttributesToNewModel($credentialsOrAttributes, $this->getModelClassName()))
-                :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
+            ?  $this->storeEloquentModelInDatabase(
+                $this->addAttributesToNewModel(
+                    $this->hashHashAbleAttributes(
+                        $credentialsOrAttributes, $this->getModelHashAbleAttributes()
+                    ), $this->getModelClassName()
+                )
+            )
+            :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
     }
 
     /**
@@ -65,7 +70,7 @@ class UserInternalService extends InternalService implements UserInternalService
         if($this->isModelInstance($potentialModel))
         {
             return ($this->checkAttributes($attributes))
-                ? $this->storeEloquentModelInDatabase($this->addAttributesToExistingModel($potentialModel, $attributes))
+                ? $this->storeEloquentModelInDatabase($this->addAttributesToExistingModel($potentialModel, $this->hashHashAbleAttributes($attributes, $this->getModelHashAbleAttributes())))
                 : $this->sendMessage('Error. Invalid attributes or duplicate data.');
         }
         return $potentialModel;
@@ -88,18 +93,7 @@ class UserInternalService extends InternalService implements UserInternalService
         return $potentialModel;
     }
 
-    public function storeUpdated($credentialsOrAttributes =[])
-    {
-        return ($this->checkAttributes($credentialsOrAttributes))
-            ?  $this->storeEloquentModelInDatabase(
-                $this->addAttributesToNewModel(
-                    $this->hashHashAbleAttributes(
-                        $credentialsOrAttributes, $this->getModelHashAbleAttributes()
-                    ), $this->getModelClassName()
-                )
-            )
-            :  $this->sendMessage('Error. Invalid attributes or duplicate data.');
-    }
+  
 
 
 
