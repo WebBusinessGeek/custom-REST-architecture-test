@@ -54,7 +54,7 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => 'localhost', //127.0.0.1 for [ ] or local for [ ]
+			'host'      => '127.0.0.1', //127.0.0.1 for [phpUnit] or local for [.local:8000 purposes]
 			'database'  => 'restArchitecture',
 			'username'  => 'homestead',
 			'password'  => 'secret',

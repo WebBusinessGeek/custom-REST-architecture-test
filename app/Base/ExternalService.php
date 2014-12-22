@@ -24,7 +24,7 @@ abstract class ExternalService {
 
     protected $serviceSubject;
 
-    protected $errorSubject;
+    protected $errorSubject = 'Error';
 
     protected $errorCreationCode = 400;
 
@@ -48,6 +48,16 @@ abstract class ExternalService {
     public function getInternalServiceModelClassName()
     {
         return $this->internalService->getModelClassName();
+    }
+
+    public function getSuccessCreationCode()
+    {
+        return $this->successCreationCode;
+    }
+
+    public function getErrorCreationCode()
+    {
+        return $this->errorCreationCode;
     }
 
 
