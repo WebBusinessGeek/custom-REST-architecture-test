@@ -31,7 +31,7 @@ class UserExternalService extends ExternalService {
 
     /**
      * Creates, stores, and returns a new User instance if attributes are correct, otherwise returns an error message.
-     * Responses are in Json format. 
+     * Responses are in Json format.
      * @param array $credentialsOrAttributes
      * @return string
      */
@@ -39,11 +39,9 @@ class UserExternalService extends ExternalService {
     {
         $apiResponse = $this->internalService->store($credentialsOrAttributes);
 
-        if(is_object($apiResponse) && '\\'. get_class($apiResponse) == $this->getInternalServiceModelClassName())
-        {
-            return $this->sendMessageInJson($this->serviceSubject, $apiResponse, $this->successCreationCode);
-        }
-        return $this->sendMessageInJson($this->errorSubject, $apiResponse, $this->errorCreationCode);
+        return (is_object($apiResponse) && '\\'. get_class($apiResponse) == $this->getInternalServiceModelClassName())
+        ? $this->sendMessageInJson($this->serviceSubject, $apiResponse, $this->successCreationCode)
+        : $this->sendMessageInJson($this->errorSubject, $apiResponse, $this->errorCreationCode);
     }
 
     public function show($data)

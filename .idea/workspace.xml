@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89654f89-71df-4433-8b85-4d76f96543b5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Base/ExternalService.php" afterPath="$PROJECT_DIR$/app/Base/ExternalService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/UserDirectory/UserExternalService.php" afterPath="$PROJECT_DIR$/app/UserDirectory/UserExternalService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/UserDirectory/UserExternalServiceTest.php" afterPath="$PROJECT_DIR$/tests/UserDirectory/UserExternalServiceTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/config/database.php" afterPath="$PROJECT_DIR$/resources/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="restArchitectureTest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +30,8 @@
       <file leaf-file-name="UserExternalService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserExternalService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24460432" vertical-offset="505" max-vertical-offset="1800">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.78417265" vertical-offset="330" max-vertical-offset="1750">
+              <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -754,8 +749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/UserDirectory/UserExternalService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24460432" vertical-offset="505" max-vertical-offset="1800">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.78417265" vertical-offset="330" max-vertical-offset="1750">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
           <folding />
         </state>
       </provider>
