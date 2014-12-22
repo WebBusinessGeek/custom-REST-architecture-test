@@ -38,15 +38,19 @@ class WelcomeController extends Controller
 	 */
 	public function index()
 	{
-		return view('welcome');
+//		return view('welcome');
 
-//		$attr = [
-//			'email' => 'quickExternalTest@email.com',
-//			'password' => 'testtest123456'
-//		];
-//
-//		$userService = new UserExternalService();
-//		dd($userService->store($attr));
+
+
+
+
+		$attr = [
+			'email' => 'quickExternalTest@email.com',
+			'password' => 'testtest123456'
+		];
+
+		$userService = new UserExternalService();
+		dd($userService->store($attr));
 
 	}
 

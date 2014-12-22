@@ -12,7 +12,12 @@ namespace App\UserDirectory;
 use App\Base\ExternalService;
 use Illuminate\Foundation\Application;
 
+
 class UserExternalService extends ExternalService {
+
+    protected $serviceSubject = 'User';
+
+    protected $errorSubject = 'Error';
 
     public function __construct()
     {
@@ -26,11 +31,28 @@ class UserExternalService extends ExternalService {
 
     public function store($credentialsOrAttributes = [])
     {
-        return $this->internalService->store($credentialsOrAttributes);
+        $apiResponse = $this->internalService->store($credentialsOrAttributes);
+
+        if('\\'. get_class($apiResponse) == $this->getInternalServiceModelClassName())
+        {
+            return $this->sendMessageInJson($this->serviceSubject, $apiResponse, $this->successCreationCode);
+        }
+        return $this->sendMessageInJson($this->errorSubject, $apiResponse, $this->errorCreationCode);
     }
 
-    public function show()
+    public function show($data)
     {
+        //get client info
+
+        //check if user is logged in
+        //check if user is authorized
+
+        // - if so return show method
+          // - check if error message returned
+            // - if so return the error message in Json
+            // - if not return the data requested
+
+        // - if not return error message in json
     }
 
     public function update()

@@ -93,7 +93,7 @@ class UserInternalService extends InternalService implements UserInternalService
         return $potentialModel;
     }
 
-  
+
 
 
 

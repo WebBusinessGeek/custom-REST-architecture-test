@@ -21,4 +21,21 @@ trait ResponderTrait {
         return $message;
     }
 
+
+
+    /**
+     * Returns json representation of data
+     * @param $title
+     * @param $message
+     * @param $statusCode
+     * @return string
+     */
+    public function sendMessageInJson($title, $message, $statusCode)
+    {
+        return json_encode([
+            'status' => $statusCode,
+            $title => $message,
+        ]);
+    }
+
 }

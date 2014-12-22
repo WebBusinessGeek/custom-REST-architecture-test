@@ -22,11 +22,19 @@ abstract class ExternalService {
 
     protected $internalService;
 
+    protected $serviceSubject;
+
+    protected $errorSubject;
+
+    protected $errorCreationCode = 400;
+
+    protected $successCreationCode = 201;
+
     abstract public function index();
 
-    abstract public function store();
+    abstract public function store($credentialsOrAttributes = []);
 
-    abstract public function show();
+    abstract public function show($data);
 
     abstract public function update();
 
@@ -36,5 +44,14 @@ abstract class ExternalService {
     {
         return $this->internalService;
     }
+
+    public function getInternalServiceModelClassName()
+    {
+        return $this->internalService->getModelClassName();
+    }
+
+
+
+
 }
 
