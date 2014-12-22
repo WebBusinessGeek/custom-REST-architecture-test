@@ -26,7 +26,7 @@ class AuthExternalService extends ExternalService{
 
     public function store()
     {
-        // TODO: Implement store() method.
+//        return $this->internalService->store();
     }
 
     public function show()

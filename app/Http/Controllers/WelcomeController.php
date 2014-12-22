@@ -4,6 +4,7 @@ use App\Auth\Auth;
 use App\Auth\AuthInternalService;
 use App\Polymorphic\TraitConcrete;
 use App\UserDirectory\User;
+use App\UserDirectory\UserExternalService;
 use Faker\Provider\DateTime;
 
 class WelcomeController extends Controller
@@ -37,8 +38,15 @@ class WelcomeController extends Controller
 	 */
 	public function index()
 	{
-		return view('welcome');
+//		return view('welcome');
 
+		$attr = [
+			'email' => 'quickExternalTest@email.com',
+			'password' => 'testtest123456'
+		];
+
+		$userService = new UserExternalService();
+		dd($userService->store($attr));
 
 	}
 

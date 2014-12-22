@@ -10,6 +10,7 @@ namespace App\Base;
 
 
 
+use App\Polymorphic\AuthenticationTrait;
 use App\Polymorphic\RepositoryTrait;
 use App\Polymorphic\ResponderTrait;
 use App\Polymorphic\ValidatorTrait;
@@ -18,7 +19,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 abstract class InternalService {
 
-    use ValidatorTrait, ResponderTrait,  RepositoryTrait;
+    use ValidatorTrait, ResponderTrait,  RepositoryTrait, AuthenticationTrait;
 
     public $model;
 
@@ -120,6 +121,9 @@ abstract class InternalService {
     {
         return $this->model->getLoginExpiration();
     }
+
+
+
 
 
 

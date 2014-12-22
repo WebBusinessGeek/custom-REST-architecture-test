@@ -1018,5 +1018,26 @@ class TraitConcreteTest extends \TestCase {
     }
 
 
+    /**
+     *Test method hashes all hashAble attributes and returns them.
+     */
+    public function test_authenticationTrait_hashHashAbleAttributes_method()
+    {
+        //trait instance
+
+        //array with hashable attributes
+
+        //array without hashable attributes
+
+        //call hashHashAbleAttributes on array with hashable attributes and Store the response
+
+        //assert hashable attributes have been hashed using response
+
+        //call hashHashAbleAttributes on array with NO hashable attributes and store the response
+
+        //assert attriubtes are the same using response
+    }
+
+
 
 }

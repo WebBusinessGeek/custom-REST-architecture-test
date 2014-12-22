@@ -24,14 +24,13 @@ class UserExternalService extends ExternalService {
         // TODO: Implement index() method.
     }
 
-    public function store()
+    public function store($credentialsOrAttributes = [])
     {
-        // TODO: Implement store() method.
+        return $this->internalService->store($credentialsOrAttributes);
     }
 
     public function show()
     {
-        // TODO: Implement show() method.
     }
 
     public function update()

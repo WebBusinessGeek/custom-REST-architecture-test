@@ -31,4 +31,10 @@ abstract class ExternalService {
     abstract public function update();
 
     abstract public function destroy();
+
+    public function getInternalService()
+    {
+        return $this->internalService;
+    }
 }
+
